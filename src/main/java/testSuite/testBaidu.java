@@ -10,7 +10,7 @@ import com.config.selenium.LOGGER;
 
 public class testBaidu {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 //        System.setProperty("webdriver.chrome.driver", ".\\Tools\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -24,6 +24,12 @@ public class testBaidu {
 
         driver.findElement(By.id("kw")).sendKeys("Selenium");
         LOGGER.Output(LogType.LogTypeName.INFO, "搜索输入框输入关键字selenium");
+
+        Thread.sleep(3000);
+
+        driver.findElement(By.id("su")).click();
+        LOGGER.Output(LogType.LogTypeName.INFO,"点击搜索按钮");
+        Thread.sleep(3000);
 
         driver.quit();
         LOGGER.Output(LogType.LogTypeName.INFO,"退出浏览器");
