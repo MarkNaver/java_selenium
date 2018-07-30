@@ -1,3 +1,5 @@
+package Learn;
+
 public class Java_err_class {
     public static void main(String[] args) {
         try {

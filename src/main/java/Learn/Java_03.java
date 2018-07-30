@@ -1,3 +1,5 @@
+package Learn;
+
 class VIP{
     private int age;
     private char sex;
