@@ -7,4 +7,6 @@ IDE: Intellij IDEA
 
 首版发布时间：2018 7.30
 
+浏览器:Chrome、Firefox、IE
+
 如有问题，请联系 : `tcwaily@me.com`
