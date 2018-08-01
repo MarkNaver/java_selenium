@@ -1,7 +1,9 @@
+package Learn;
+
 import com.config.selenium.SeleniumHaaaaaa;
 class Fsd{
     SeleniumHaaaaaa a = new SeleniumHaaaaaa();
-//    Test1
+//    Learn.Test1
 }
 
 public class Java_02 {

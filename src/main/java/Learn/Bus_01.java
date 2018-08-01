@@ -1,3 +1,5 @@
+package Learn;
+
 class Bus{
     String name;
     String color;

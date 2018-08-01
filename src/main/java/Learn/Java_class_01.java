@@ -1,3 +1,5 @@
+package Learn;
+
 class Woman {
     String name;
     int age;
@@ -156,7 +158,7 @@ class Print {
     public static void main(String[] args) {
         People a = new People();
         People b = new People("陶春文", 33);
-//        Man1 c = new Man1("fd",123);
+//        Learn.Man1 c = new Learn.Man1("fd",123);
         People c = new People(1,2);
         String d = a.start();
         System.out.println(d);
