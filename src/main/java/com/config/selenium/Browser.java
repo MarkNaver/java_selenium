@@ -45,9 +45,15 @@ public class Browser {
 
         }else if(browserName.equalsIgnoreCase("Windows_Chrome")){
 
-            System.setProperty("webdriver.chrome.driver", "./Tools/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/main/java/Tools/chromedriver.exe");
             driver= new ChromeDriver();
-            LOGGER.Output(LogType.LogTypeName.INFO, "Launching Chrome ...");
+            LOGGER.Output(LogType.LogTypeName.INFO, "启动Chrome浏览器 ...");
+            driver.get(serverURL);
+            LOGGER.Output(LogType.LogTypeName.INFO, "Open URL: "+ serverURL);
+            driver.manage().window().maximize();
+            LOGGER.Output(LogType.LogTypeName.INFO, "最大化浏览器...");
+            callWait(5);
+            return driver;
 
         }else if(browserName.equalsIgnoreCase("IE")){
 
