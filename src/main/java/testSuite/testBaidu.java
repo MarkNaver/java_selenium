@@ -12,7 +12,7 @@ public class testBaidu {
 
     public static void main(String[] args) {
 
-//        System.setProperty("webdriver.chrome.driver", ".\\Tools\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\selenium-chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         LOGGER.Output(LogType.LogTypeName.INFO, "启动chrome浏览器");
 
