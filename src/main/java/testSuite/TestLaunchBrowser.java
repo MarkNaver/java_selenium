@@ -2,6 +2,8 @@ package testSuite;
 
 import java.io.IOException;
 
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -14,7 +16,7 @@ public class TestLaunchBrowser {
 
     public WebDriver driver;
 
-    @BeforeClass
+    @Before
     public void setUp() throws IOException{
 
         Browser browserEngine = new Browser();
@@ -32,7 +34,7 @@ public class TestLaunchBrowser {
 
     }
 
-    @AfterClass
+    @After
     public void tearDown(){
 
         driver.quit();

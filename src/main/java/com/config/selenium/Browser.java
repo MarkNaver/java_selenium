@@ -25,7 +25,7 @@ public class Browser {
         InputStream ips = new FileInputStream("./src/main/java/com/config/selenium/config.properties");
         p.load(ips);
 
-        LOGGER.Output(LogType.LogTypeName.INFO, "开始从属性文件中选择浏览器名称e");
+        LOGGER.Output(LogType.LogTypeName.INFO, "开始从属性文件中选择浏览器名称");
         browserName=p.getProperty("browserName");
         LOGGER.Output(LogType.LogTypeName.INFO, "选择的浏览器类型是: "+ browserName);
         serverURL = p.getProperty("URL");
