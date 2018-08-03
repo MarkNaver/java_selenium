@@ -11,7 +11,7 @@ public class testBaidu {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "D:\\selenium-chrome\\chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "D:\\selenium-chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         LOGGER.Output(LogType.LogTypeName.INFO, "启动chrome浏览器");
 
