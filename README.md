@@ -13,7 +13,7 @@
 
 * 首版发布时间：2018 7.30
 
-*浏览器:Chrome、Firefox、IE
+* 浏览器:Chrome、Firefox、IE
 
 如有问题，请联系 : `tcwaily@me.com`、`ae3inrsv@163.com`、`ttblmtang123@gmail.com`
 
