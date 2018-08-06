@@ -3,7 +3,10 @@ package testSuite;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -16,21 +19,34 @@ import org.apache.logging.log4j.LogManager;
 //import org.junit.BeforeClass;
 
 public class FrameworkTestCase {
-    WebDriver driver;
+    private WebDriver driver;
     private String baseUrl;
-    SearchPageFactory searchPage;
+    private SearchPageFactory searchPage;
     private static final Logger log = LogManager.getLogger(FrameworkTestCase.class.getName());
 
     @BeforeClass
     @Parameters({"browser"})
-    public void setUp(String browser) throws Exception {
+    public void setUp(String browser) {
 //        driver = new ChromeDriver();
         baseUrl = "https://www.expedia-cn.com/";
         if (browser.equalsIgnoreCase("Chrome")) {
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("Firefox")) {
             driver = new FirefoxDriver();
+        } else if (browser.equalsIgnoreCase("Chrome_headless")) {
+            //Chrome无头浏览器
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--headless");
+            driver = new ChromeDriver(chromeOptions);
+        } else if (browser.equalsIgnoreCase("Firefox_headless")) {
+            FirefoxBinary firefoxBinary = new FirefoxBinary();
+            firefoxBinary.addCommandLineOptions("--headless");
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.setBinary(firefoxBinary);
+            driver = new FirefoxDriver(firefoxOptions);
         }
+
+
         searchPage = new SearchPageFactory(driver);
 
         driver.manage().window().maximize();

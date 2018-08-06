@@ -3,10 +3,10 @@
 <!--查找页面所有链接并校验有效性-->
 <suite name="All Test Suite">
     <test name="FindLinks">
-        <parameter name="url" value="https://www.baidu.com/"></parameter>
+        <parameter name="url" value="https://www.baidu.com/"/>
         <classes>
             <!--name为包名.类名-->
-            <class name="testSuite.FindLinks"></class>
+            <class name="testSuite.FindLinks"/>
         </classes>
     </test>
 </suite>
