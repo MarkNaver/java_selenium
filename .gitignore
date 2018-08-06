@@ -1,3 +1,5 @@
 #测试结果不提交
 *.html
 logs/
+target/
+src/test/
