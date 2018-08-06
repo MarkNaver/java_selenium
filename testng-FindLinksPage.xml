@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--查找页面所有链接并校验有效性-->
+<suite name="All Test Suite">
+    <test name="FindLinks">
+        <parameter name="url" value="https://www.baidu.com/"></parameter>
+        <classes>
+            <!--name为包名.类名-->
+            <class name="testSuite.FindLinks"></class>
+        </classes>
+    </test>
+</suite>
