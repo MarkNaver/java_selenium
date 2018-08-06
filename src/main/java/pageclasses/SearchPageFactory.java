@@ -49,19 +49,11 @@ public class SearchPageFactory {
     WebElement searchButton;
 
     public SearchPageFactory(WebDriver driver) {
+        //构造函数，初始化所有PageFactory供用例使用
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
 
-//    public SearchPageFactory(WebDriver driver) {
-//        this.driver = driver;
-//        PageFactory.initElements(driver,this);
-//    }
-
-    //    public SearchPageFactory(driver) {
-//        this.driver = driver;
-//        PageFactory.initElements(driver,this);
-//    }
     //点击机票大Tab标签
     public void clicTabfightTab() {
         tabFightTab.click();
