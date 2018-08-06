@@ -11,11 +11,11 @@ public class SearchPageFactory {
     WebDriver driver;
     //往返 标签元素
     @FindBy(id = "tab-flight-tab")
-    WebElement tabFightTab;
+    private WebElement tabFightTab;
 
     //单程 标签元素
     @FindBy(id = "flight-type-one-way-label")
-    WebElement fightTab;
+    private WebElement fightTab;
 
     //往返 标签元素
     @FindBy(id = "flight-type-roundtrip-label")
@@ -70,7 +70,7 @@ public class SearchPageFactory {
         roundTrip.click();
     }
 
-    // //点击多个目的地标签
+    //点击多个目的地标签
     public void clickMultipleDestination() {
         multipleDestination.click();
     }
