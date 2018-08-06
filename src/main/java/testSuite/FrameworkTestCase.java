@@ -3,8 +3,10 @@ package testSuite;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageclasses.SearchPageFactory;
 
@@ -20,9 +22,15 @@ public class FrameworkTestCase {
     private static final Logger log = LogManager.getLogger(FrameworkTestCase.class.getName());
 
     @BeforeClass
-    public void setUp() throws Exception {
-        driver = new ChromeDriver();
+    @Parameters({"browser"})
+    public void setUp(String browser) throws Exception {
+//        driver = new ChromeDriver();
         baseUrl = "https://www.expedia-cn.com/";
+        if (browser.equalsIgnoreCase("Chrome")) {
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("Firefox")) {
+            driver = new FirefoxDriver();
+        }
         searchPage = new SearchPageFactory(driver);
 
         driver.manage().window().maximize();

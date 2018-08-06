@@ -19,34 +19,35 @@ public class SearchPageFactory {
 
     //往返 标签元素
     @FindBy(id = "flight-type-roundtrip-label")
+    private
     WebElement roundTrip;
 
     //多个目的地 标签元素
     @FindBy(id = "flight-type-multi-dest-label")
-    WebElement multipleDestination;
+    private WebElement multipleDestination;
 
 
     //始发地文本框 元素
     @FindBy(id = "flight-origin")
-    WebElement origin;
+    private WebElement origin;
 
 
     //目的地文本框 元素
     @FindBy(id = "flight-destination")
-    WebElement destination;
+    private WebElement destination;
 
 
     //出发日期文本框
     @FindBy(id = "flight-departing")
-    WebElement departure;
+    private WebElement departure;
 
     //返回日期文本框
     @FindBy(id = "flight-returning")
-    WebElement flightReturning;
+    public WebElement flightReturning;
 
     //搜索按钮 元素
     @FindBy(css = "#search-button")
-    WebElement searchButton;
+    private WebElement searchButton;
 
     public SearchPageFactory(WebDriver driver) {
         //构造函数，初始化所有PageFactory供用例使用
