@@ -1,19 +1,19 @@
 # java + selenium3 框架实践
 
 ## 工具及资源信息
-IDE: [Intellij IDEA](https://www.jetbrains.com/idea/) -> 2018.1
+* IDE: [Intellij IDEA](https://www.jetbrains.com/idea/) -> 2018.1
 
-语言： [java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) -> JDK 1.8
+* 语言： [java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) -> JDK 1.8
 
-UI框架 [selenium](https://www.seleniumhq.org/download/) -> 3.13.0
+* UI框架 [selenium](https://www.seleniumhq.org/download/) -> 3.13.0
 
-测试框架 [testNG](https://www.yiibai.com/testng/) -> 6.14.3
+* 测试框架 [testNG](https://www.yiibai.com/testng/) -> 6.14.3
 
-操作系统： Mac、Windows
+* 操作系统： Mac、Windows
 
-首版发布时间：2018 7.30
+* 首版发布时间：2018 7.30
 
-浏览器:Chrome、Firefox、IE
+*浏览器:Chrome、Firefox、IE
 
 如有问题，请联系 : `tcwaily@me.com`、`ae3inrsv@163.com`、`ttblmtang123@gmail.com`
 
