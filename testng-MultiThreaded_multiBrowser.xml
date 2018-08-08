@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--多浏览器、多线程并行测试-->
-<suite name="All Test Suite" parallel="tests" thread-count="4">
+<suite name="All Test Suite" parallel="tests" thread-count="1">
     <!--Firefox浏览器-->
-    <test name="Firefox Test">
+    <test name="Firefox Test" enabled="false">
         <!--name为传给FrameworkTestCase类的参数名，值为Firefox-->
         <parameter name="browser" value="Firefox"/>
         <classes>
@@ -12,21 +12,21 @@
         </classes>
     </test>
     <!--Chrome浏览器-->
-    <test  name="Chrome Test">
+    <test  name="Chrome Test" >
         <parameter name="browser" value="Chrome"/>
         <classes>
             <class name="testSuite.FrameworkTestCase"/>
         </classes>
     </test>
     <!--Chrome无头浏览器-->
-    <test  name="Chrome Headless Test">
+    <test  name="Chrome Headless Test" enabled="false">
         <parameter name="browser" value="Chrome_headless"/>
         <classes>
             <class name="testSuite.FrameworkTestCase"/>
         </classes>
     </test>
     <!--Firefox无头浏览器-->
-    <test  name="Firefox Headless Test">
+    <test  name="Firefox Headless Test" enabled="false">
         <parameter name="browser" value="Firefox_headless"/>
         <classes>
             <class name="testSuite.FrameworkTestCase"/>
