@@ -1,5 +1,9 @@
 package pageclasses;
 
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SearchPageFactory {
     //创建对象工厂
+    private ExtentTest test;
 
     WebDriver driver;
     //往返 标签元素
@@ -49,15 +54,18 @@ public class SearchPageFactory {
     @FindBy(css = "#search-button")
     private WebElement searchButton;
 
-    public SearchPageFactory(WebDriver driver) {
+    public SearchPageFactory(WebDriver driver,ExtentTest test) {
         //构造函数，初始化所有PageFactory供用例使用
         this.driver = driver;
+        this.test = test;
         PageFactory.initElements(driver,this);
     }
 
     //点击机票大Tab标签
     public void clicTabfightTab() {
         tabFightTab.click();
+        test.log(LogStatus.INFO,"点击了机票标签,我在元素工厂中");
+
     }
 
 
@@ -94,6 +102,34 @@ public class SearchPageFactory {
     //搜索按钮点击
     public void clickSearchButton() {
         searchButton.click();
+        test.log(LogStatus.INFO,"点击了搜索按钮,我在元素工厂中");
+
+    }
+
+    //判断是否找到了titleBar元素来判断case是否成功
+    public boolean isTitleBarPresent() {
+        WebElement titleBar = null;
+        try {
+            titleBar = driver.findElement(By.id("titleBar"));
+            if (titleBar != null) {
+                return true;
+            }
+        } catch (NoSuchElementException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return false;
+    }
+
+    //步骤集合
+    public void searchPage(String flightOrigin, String flightDestination, String flightDeparting) {
+        clicTabfightTab();
+        clickFightTab();
+        setFlightOrigin(flightOrigin);
+        setDestination(flightDestination);
+        setDepartureDate(flightDeparting);
+        clickFightTab();//注意！必须调用，否则上一步元素弹窗挡住了下一步的元素导致case失败
+        clickSearchButton();
     }
 
 }

@@ -58,12 +58,12 @@ public class FrameworkTestCase {
         test.log(LogStatus.INFO,"寻找到了合适的浏览器并且打开了");
 
 
-        searchPage = new SearchPageFactory(driver);
+        searchPage = new SearchPageFactory(driver,test);
 
         driver.manage().window().maximize();
         log.info("浏览器最大化");
         test.log(LogStatus.INFO,"浏览器最大化了");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(baseUrl);
         log.info("打开了网址");
         test.log(LogStatus.INFO,"打开了网站了！");
