@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class MouseHoverActions {
+    //鼠标悬停操作
     JavascriptExecutor jse;
     private WebDriver driver;
     private String baseUrl;
