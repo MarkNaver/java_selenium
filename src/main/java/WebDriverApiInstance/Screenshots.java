@@ -14,6 +14,7 @@ import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class Screenshots {
+    //失败时截图实例
     private WebDriver driver;
     private String baseUrl;
 
