@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class KeyPress {
+    //WebDriver使用键盘按键Api实例
     private WebDriver driver;
     private String baseUrl;
 
@@ -26,7 +27,6 @@ public class KeyPress {
     public void testKeyPress() throws Exception {
         driver.get(baseUrl);
         driver.findElement(By.id("login-username")).sendKeys("test");
-        Thread.sleep(2222);
 
 //        driver.findElement(By.id("login-signin")).sendKeys(Keys.ENTER);
         driver.findElement(By.id("login-username")).sendKeys(Keys.TAB);
@@ -38,7 +38,7 @@ public class KeyPress {
 
     @AfterClass
     public void tearDown() throws Exception {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         driver.quit();
     }
 }
