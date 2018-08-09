@@ -12,6 +12,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class SwitchWindow {
+    //切换浏览器标签
     private WebDriver driver;
     private String baseUrl;
 
