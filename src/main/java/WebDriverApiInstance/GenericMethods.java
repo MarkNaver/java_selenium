@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenericMethods {
-    //findElement方法重写 并打印当前使用By.方法查找的元素
+    //findElement方法重写 并在控制台显示使用By方法查找的元素
 
     WebDriver driver;
 
