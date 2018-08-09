@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class SliderActions {
+    //滑块动作 可设置横向或纵向坐标
     private WebDriver driver;
     private String baseUrl;
 
