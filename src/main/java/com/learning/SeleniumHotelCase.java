@@ -5,6 +5,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -47,13 +48,16 @@ public class SeleniumHotelCase extends TestSuiteBaseDemo {
         hotelsFactoryDemo.sendCheckin("2018/09/24");
         test.log(LogStatus.INFO, "输入了入住日期");
 
-        hotelsFactoryDemo.sendCheckout("2018/10/24");
+        hotelsFactoryDemo.sendCheckout("2018/10/04");
         test.log(LogStatus.INFO, "输入了离店时间");
 
 //        clickClose();
         hotelsFactoryDemo.setSearchButton();
         test.log(LogStatus.INFO, "点击了搜索按钮");
 
+        boolean result = hotelsFactoryDemo.isTitleBarPresent();
+        Assert.assertTrue(result);
+        test.log(LogStatus.PASS, "用例执行成功");
     }
 
     @AfterMethod

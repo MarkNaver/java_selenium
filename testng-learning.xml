@@ -3,7 +3,7 @@
 <!--多浏览器、多线程并行测试-->
 <suite name="All Test Suite">
     <test name="Chrome Test" enabled="true">
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser" value="Firefox"/>
         <parameter name="url" value="https://www.expedia-cn.com"/>
         <classes>
             <class name="com.learning.SeleniumTestFramework"/>
@@ -12,7 +12,7 @@
     </test>
 
     <test name="Firefox Test" enabled="true">
-        <parameter name="browser" value="Firefox"/>
+        <parameter name="browser" value="Chrome"/>
         <parameter name="url" value="https://www.expedia-cn.com/"/>
         <classes>
             <class name="com.learning.SeleniumHotelCase"/>

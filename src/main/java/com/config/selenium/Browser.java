@@ -1,16 +1,15 @@
 package com.config.selenium;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class Browser {
 
@@ -94,31 +93,6 @@ public class Browser {
         LOGGER.Output(LogType.LogTypeName.INFO, "Wait for "+time+" seconds.");
     }
 
-
-    /*
-     * createFireFox Driver
-     * @Param: null
-     * @return: WebDriver
-     */
-
-//    private WebDriver createFireFoxDriver() {
-//
-//        WebDriver driver = null;
-//        FirefoxProfile firefoxProfile = new FirefoxProfile();
-//
-//        firefoxProfile.setPreference("prefs.converted-to-utf8", true);
-//        //set download folder to default folder: TestDownload
-//        firefoxProfile.setPreference("browser.download.folderList", 2);
-//        firefoxProfile.setPreference("browser.download.dir", ".\\TestDownload");
-//
-//        try {
-//            driver = new FirefoxDriver(firefoxProfile);
-//        } catch (Exception e) {
-//            LOGGER.Output(LogType.LogTypeName.ERROR, e.getMessage());
-//            LOGGER.Output(LogType.LogTypeName.ERROR, "初始化firefox浏览器失败。。。");
-//        }
-//        return driver;
-//    }
 
 
 }

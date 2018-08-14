@@ -3,6 +3,8 @@ package com.learning;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,6 +73,20 @@ public class HotelsFactoryDemo {
         hotelCheckout.sendKeys(data);
         log.info("输入离开日期");
 
+    }
+
+    public boolean isTitleBarPresent() {
+        WebElement titleBar;
+        try {
+            titleBar = driver.findElement(By.xpath("//h3[contains(text(),'排序方式：')]"));
+            if (titleBar != null) {
+                return true;
+            }
+        } catch (NoSuchElementException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return false;
     }
 
     public void clickClose() {
