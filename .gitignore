@@ -1,6 +1,6 @@
 #测试结果不提交
 *.html
 logs/
-target/
+*target/
 src/test/
 .idea/
