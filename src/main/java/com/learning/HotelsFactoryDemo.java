@@ -39,13 +39,23 @@ public class HotelsFactoryDemo {
     @FindBy(id = "search-button")
     private WebElement searchButton;
 
+    //搜索酒店文字
+    @FindBy(xpath = "//h1[@class='col wizard-title']")
+    private WebElement wizardTitle;
+
     public HotelsFactoryDemo(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void sendDestination(String data) {
+
+    void sendDestination(String data) {
         hotelDestination.sendKeys(data);
         log.info("输入了目的地");
+    }
+
+    void clickWizardTitle() {
+        wizardTitle.click();
+        log.info("输入目的地后切换一下焦点");
     }
 
     void clickHotel() {
