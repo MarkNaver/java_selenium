@@ -14,6 +14,8 @@ import pageclasses.ExtentFactory;
 
 public class SeleniumHotelCase extends TestSuiteBaseDemo {
     private HotelsFactoryDemo hotelsFactoryDemo;
+
+    //高级测试报告
     private ExtentReports reports;
     private ExtentTest test;
 
@@ -22,8 +24,11 @@ public class SeleniumHotelCase extends TestSuiteBaseDemo {
     public void beforeClass() {
         //每个测试类都需要初始化对象仓库
         hotelsFactoryDemo = PageFactory.initElements(driver, HotelsFactoryDemo.class);
+
+        //高级测试报告
         reports = ExtentFactory.GetInstance();
-        test = reports.startTest("查找酒店");
+        //报告的名称
+        test = reports.startTest("SeleniumHotelCase -> 查找酒店");
 
     }
 
@@ -42,8 +47,8 @@ public class SeleniumHotelCase extends TestSuiteBaseDemo {
         hotelsFactoryDemo.sendCheckin("2018/09/24");
         test.log(LogStatus.INFO, "输入了入住日期");
 
-//        hotelsFactoryDemo.sendCheckout("2018/10/24");
-//        test.log(LogStatus.INFO,"输入了离店时间");
+        hotelsFactoryDemo.sendCheckout("2018/10/24");
+        test.log(LogStatus.INFO, "输入了离店时间");
 
 //        clickClose();
         hotelsFactoryDemo.setSearchButton();
@@ -54,6 +59,7 @@ public class SeleniumHotelCase extends TestSuiteBaseDemo {
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
         Thread.sleep(1222);
+        //失败截图，并存入报告
         if (result.getStatus() == ITestResult.FAILURE) {
             String path = ScreenshotsDemo.takeScreenshots(driver, result.getName());
             String imagePath = test.addScreenCapture(path);
