@@ -3,10 +3,9 @@
 <!--多浏览器、多线程并行测试-->
 <suite name="All Test Suite">
     <test name="Chrome Test">
-        <parameter name="browser" value="Chrome"/>
-        <parameter name="url" value="https://www.expedia-cn.com"/>
+        <!--<parameter name="browser" value="Chrome"/>-->
         <classes>
-            <class name="pageclasses.LoginTest"/>
+            <class name="com.learning.LearningJavaTest"/>
             <!--<class name="testSuite.FrameworkTestCase3"/>-->
 
         </classes>

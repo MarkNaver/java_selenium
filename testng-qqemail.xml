@@ -4,9 +4,9 @@
 <suite name="All Test Suite">
     <test name="Chrome Test">
         <parameter name="browser" value="Chrome"/>
-        <parameter name="url" value="https://www.expedia-cn.com"/>
+        <parameter name="url" value="https://mail.qq.com"/>
         <classes>
-            <class name="pageclasses.LoginTest"/>
+            <class name="testSuite.LoginQQEmail"/>
             <!--<class name="testSuite.FrameworkTestCase3"/>-->
 
         </classes>

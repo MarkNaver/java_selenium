@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--多浏览器、多线程并行测试-->
+<suite name="All Test Suite">
+    <test name="Chrome Test" enabled="true">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="url" value="https://www.expedia-cn.com"/>
+        <classes>
+            <class name="com.learning.SeleniumTestFramework"/>
+
+        </classes>
+    </test>
+
+    <test name="Firefox Test" enabled="true">
+        <parameter name="browser" value="Firefox"/>
+        <parameter name="url" value="https://www.expedia-cn.com/"/>
+        <classes>
+            <class name="com.learning.SeleniumHotelCase"/>
+
+        </classes>
+    </test>
+
+</suite>

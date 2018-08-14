@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--查找页面所有链接并校验有效性-->
 <suite name="All Test Suite">
-    <test name="FindLinks">
+    <test name="FindLinks" enabled="false">
         <parameter name="url" value="https://www.baidu.com/"/>
         <classes>
             <!--name为包名.类名-->

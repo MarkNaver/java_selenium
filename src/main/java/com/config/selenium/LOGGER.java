@@ -22,7 +22,7 @@ public class LOGGER {
         try {
 
             // 定义日志文件保存路径和日志文件名称
-            logFileName = "./src/main/java/Log/" + OutputFileName + ".log";
+            logFileName = "./Logs/" + OutputFileName + ".log";
             if (outputStreamWriter == null) {
                 File logFile = new File(logFileName);
 

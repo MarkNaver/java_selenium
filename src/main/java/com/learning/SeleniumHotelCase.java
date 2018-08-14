@@ -12,44 +12,47 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageclasses.ExtentFactory;
 
-public class SeleniumTestFramework extends TestSuiteBaseDemo {
-    protected SearchPageFactoryDemoT search;
+public class SeleniumHotelCase extends TestSuiteBaseDemo {
+    private HotelsFactoryDemo hotelsFactoryDemo;
+
     //高级测试报告
     private ExtentReports reports;
     private ExtentTest test;
 
+
     @BeforeClass
     public void beforeClass() {
         //每个测试类都需要初始化对象仓库
-        search = PageFactory.initElements(driver, SearchPageFactoryDemoT.class);
+        hotelsFactoryDemo = PageFactory.initElements(driver, HotelsFactoryDemo.class);
+
         //高级测试报告
         reports = ExtentFactory.GetInstance();
         //报告的名称
-        test = reports.startTest("SeleniumTestFramework -> 查找机票");
+        test = reports.startTest("SeleniumHotelCase -> 查找酒店");
+
     }
 
     @Test
     public void searchFlights() {
-        search.clickTab();
-        test.log(LogStatus.INFO, "点击了机票按钮");
+//        hotelsFactoryDemo.searchHotels("东京, 日本 (TYO-所有机场)","2018/09/24","2018/10/24");
+        hotelsFactoryDemo.clickHotel();
+        test.log(LogStatus.INFO, "点击了酒店按钮");
 
-        search.clickFightTab();
-        test.log(LogStatus.INFO, "点击了单程按钮");
+        hotelsFactoryDemo.sendDestination("东京, 日本 (TYO-所有机场)");
+        test.log(LogStatus.INFO, "输入了目的地");
 
-        search.setOriginCity("北京, 中国 (PEK-首都国际机场)");
-        test.log(LogStatus.INFO, "输入出发地");
+        hotelsFactoryDemo.clickWizardTitle();
+        test.log(LogStatus.INFO, "点击了搜索酒店文字");
 
-        search.setDestinationCity("上海, 中国 (SHA-虹桥国际机场)");
-        test.log(LogStatus.INFO, "输入目的地");
+        hotelsFactoryDemo.sendCheckin("2018/09/24");
+        test.log(LogStatus.INFO, "输入了入住日期");
 
-        search.setDeaprtureDate("2018/09/29");
-        test.log(LogStatus.INFO, "输入出发时间");
+        hotelsFactoryDemo.sendCheckout("2018/10/24");
+        test.log(LogStatus.INFO, "输入了离店时间");
 
-        search.clickCalendar();
-        test.log(LogStatus.INFO, "关闭弹窗");
-
-        search.clickSearchButton();
-        test.log(LogStatus.INFO, "点击搜索按钮");
+//        clickClose();
+        hotelsFactoryDemo.setSearchButton();
+        test.log(LogStatus.INFO, "点击了搜索按钮");
 
     }
 
@@ -66,9 +69,8 @@ public class SeleniumTestFramework extends TestSuiteBaseDemo {
         reports.endTest(test);
         reports.flush();
     }
-
-
     @AfterClass
     public void tearDown() {
+
     }
 }

@@ -15,6 +15,6 @@ public class LogType {
         //
         WARNING,
         //
-        DEBUG;
+        DEBUG
     }
 }

@@ -14,7 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 public class TestSuiteBaseDemo {
     protected WebDriver driver;
-    protected SearchPageFactoryDemoT search;
+
+//    protected SearchPageFactoryDemoT search;
 
     private static WebDriver getDriverInstance(String browser, String url) {
         WebDriver driver = null;
@@ -45,8 +46,6 @@ public class TestSuiteBaseDemo {
         } catch (Exception e) {
             e.getMessage();
         }
-
-
         return driver;
     }
 
@@ -54,8 +53,8 @@ public class TestSuiteBaseDemo {
     @BeforeClass(alwaysRun = true)
     public void setup(String browser, String url) {
         driver = getDriverInstance(browser, url);
-//        search = PageFactory.initElements(driver, SearchPageFactoryDemoT.class);
     }
+
 
     @AfterClass
     public void afterClass() {

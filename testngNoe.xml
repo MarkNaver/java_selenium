@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--多浏览器、多线程并行测试-->
+<suite name="All Test Suite" parallel="tests">
+    <test name="Chrome Test">
+        <parameter name="browser" value="chrome"/>
+        <!--<parameter name="platform" value="Windows"/>-->
+        <!--<parameter name="version" value="68.0.3400.106"/>-->
+        <parameter name="url" value="https://www.expedia-cn.com"/>
+        <classes>
+            <class name="pageclasses.NoeClass"/>
+        </classes>
+    </test>
+
+    <!--<test name="Firefox Test">-->
+    <!--<parameter name="browser" value="firefox"/>-->
+    <!--<parameter name="platform" value="Windows"/>-->
+    <!--<parameter name="version" value="61.0.2"/>-->
+    <!--<parameter name="url" value="https://www.expedia-cn.com"/>-->
+    <!--<classes>-->
+    <!--<class name="testSuite.SeleniumGrid_TestFramework"/>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+</suite>

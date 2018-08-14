@@ -39,7 +39,6 @@ public class SearchPageFactoryDemoT {
 
     public SearchPageFactoryDemoT(WebDriver driver) {
         this.driver = driver;
-//		PageFactory.initElements(driver, this);
     }
 
     public void clickTab() {
