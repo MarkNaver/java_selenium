@@ -1,16 +1,23 @@
 package com.learning;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HotelsDemo {
+public class HotelsFactoryDemo {
+    private static final Logger log = LogManager.getLogger(HotelsFactoryDemo.class.getName());
 
     /*
     搜索酒店
      */
-    WebDriver driver;
+    private WebDriver driver;
+
+    //打开首页需点击酒店tab
+    @FindBy(id = "primary-header-hotel")
+    private WebElement primaryHeaderHotel;
 
     //搜索酒店页面目的地输入框
     @FindBy(id = "hotel-destination")
@@ -32,35 +39,44 @@ public class HotelsDemo {
     @FindBy(id = "search-button")
     private WebElement searchButton;
 
-    public HotelsDemo(WebDriver driver) {
+    public HotelsFactoryDemo(WebDriver driver) {
         this.driver = driver;
     }
 
     public void sendDestination(String data) {
         hotelDestination.sendKeys(data);
+        log.info("输入了目的地");
     }
 
-    public void sendCheckin(String data) {
+    void clickHotel() {
+        primaryHeaderHotel.click();
+    }
+
+    void sendCheckin(String data) {
         hotelCheckin.sendKeys(data);
+        log.info("输入入住日期");
     }
 
-    public void sendCheckout(String data) {
+    void sendCheckout(String data) {
         hotelCheckout.sendKeys(data);
+        log.info("输入离开日期");
+
     }
 
     public void clickClose() {
         datepickerClose.click();
     }
 
-    public void setSearchButton() {
+    void setSearchButton() {
         searchButton.click();
     }
 
     public void searchHotels(String data1, String data2, String data3) {
+        clickHotel();
         sendDestination(data1);
         sendCheckin(data2);
         sendCheckout(data3);
-        clickClose();
+//        clickClose();
         setSearchButton();
     }
 }
