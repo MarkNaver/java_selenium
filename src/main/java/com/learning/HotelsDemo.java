@@ -16,7 +16,7 @@ public class HotelsDemo {
     @FindBy(id = "hotel-destination")
     private WebElement hotelDestination;
 
-    //入住时间输入框
+    //入住时间输入框1
     @FindBy(id = "hotel-checkin")
     private WebElement hotelCheckin;
 
