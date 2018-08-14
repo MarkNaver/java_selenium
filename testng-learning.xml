@@ -2,26 +2,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--多浏览器、多线程并行测试-->
 <suite name="All Test Suite">
-    <test name="Chrome Test">
+    <test name="Chrome Test" enabled="true">
         <parameter name="browser" value="Chrome"/>
         <parameter name="url" value="https://www.expedia-cn.com"/>
-        <!--<parameter name="clazz" value="SearchPageFactoryDemo"/>-->
         <classes>
             <class name="com.learning.SeleniumTestFramework"/>
-            <!--<class name="testSuite.FrameworkTestCase3"/>-->
 
         </classes>
     </test>
 
-    <!--<test name="Firefox Test">-->
-    <!--<parameter name="browser" value="Firefox"/>-->
-    <!--<parameter name="url" value="https://www.expedia-cn.com/cn/Hotels"/>-->
-    <!--<parameter name="" value=""-->
-    <!--<classes>-->
-    <!--<class name="com.learning.SeleniumTestFramework"/>-->
-    <!--&lt;!&ndash;<class name="testSuite.FrameworkTestCase3"/>&ndash;&gt;-->
+    <test name="Firefox Test" enabled="true">
+        <parameter name="browser" value="Firefox"/>
+        <parameter name="url" value="https://www.expedia-cn.com/"/>
+        <classes>
+            <class name="com.learning.SeleniumHotelCase"/>
 
-    <!--</classes>-->
-    <!--</test>-->
+        </classes>
+    </test>
 
 </suite>
