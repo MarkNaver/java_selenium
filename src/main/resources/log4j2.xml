@@ -31,7 +31,11 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="trace">
+        <Logger name="log4jtutorial" level="info">
+            <AppenderRef ref="Console"/>
+            <!--<AppenderRef ref="log"/>-->
+        </Logger>
+        <Root level="info">
             <AppenderRef ref="File"/>
         </Root>
     </Loggers>

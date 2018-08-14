@@ -6,64 +6,49 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class SearchPageFactory {
+public class SearchPageFactoryDemo {
 //    private static final Logger log = LogManager.getLogger(LoginTest.class.getName());
-
-    //创建对象工厂
-    private ExtentTest test;
-
-    WebDriver driver;
-    //往返 标签元素
-    @FindBy(id = "tab-flight-tab")
-    private WebElement tabFightTab;
-
-    //单程 标签元素
-    @FindBy(id = "flight-type-one-way-label")
-    private WebElement fightTab;
-
-    //往返 标签元素
-    @FindBy(id = "flight-type-roundtrip-label")
-    private
-    WebElement roundTrip;
-
-    //多个目的地 标签元素
-    @FindBy(id = "flight-type-multi-dest-label")
-    private WebElement multipleDestination;
-
-
-    //始发地文本框 元素
-    @FindBy(id = "flight-origin")
-    private WebElement origin;
-
-
-    //目的地文本框 元素
-    @FindBy(id = "flight-destination")
-    private WebElement destination;
-
-
-    //出发日期文本框
-    @FindBy(id = "flight-departing")
-    private WebElement departure;
 
     //返回日期文本框
     @FindBy(id = "flight-returning")
     public WebElement flightReturning;
-
     @FindBy(xpath = "//div[@class='datepicker-close']//button[@type='button']")
-    private WebElement datepickerClose;
-
+    public WebElement datepickerClose;
+    WebDriver driver;
+    //创建对象工厂
+    private ExtentTest test;
+    //往返 标签元素
+    @FindBy(id = "tab-flight-tab")
+    private WebElement tabFightTab;
+    //单程 标签元素
+    @FindBy(id = "flight-type-one-way-label")
+    private WebElement fightTab;
+    //往返 标签元素
+    @FindBy(id = "flight-type-roundtrip-label")
+    private
+    WebElement roundTrip;
+    //多个目的地 标签元素
+    @FindBy(id = "flight-type-multi-dest-label")
+    private WebElement multipleDestination;
+    //始发地文本框 元素
+    @FindBy(id = "flight-origin")
+    private WebElement origin;
+    //目的地文本框 元素
+    @FindBy(id = "flight-destination")
+    private WebElement destination;
+    //出发日期文本框
+    @FindBy(id = "flight-departing")
+    private WebElement departure;
     //搜索按钮 元素
     @FindBy(css = "#search-button")
     private WebElement searchButton;
 
 
-    public SearchPageFactory(WebDriver driver) {
+    public SearchPageFactoryDemo(WebDriver driver) {
         //构造函数，初始化所有PageFactory供用例使用
         this.driver = driver;
-//        this.test = test;
-        PageFactory.initElements(driver,this);
+        //        PageFactory.initElements(driver,this);
     }
 
     //点击机票大Tab标签
@@ -94,6 +79,7 @@ public class SearchPageFactory {
     //出发地输入
     public void setFlightOrigin(String originCity) {
         origin.sendKeys(originCity);
+//        test.log(LogStatus.INFO,"输入了出发地");
     }
 
     //目的地输入
@@ -120,7 +106,7 @@ public class SearchPageFactory {
 
     //判断是否找到了titleBar元素来判断case是否成功
     public boolean isTitleBarPresent() {
-        WebElement titleBar = null;
+        WebElement titleBar;
         try {
             titleBar = driver.findElement(By.id("titleBar"));
             if (titleBar != null) {
@@ -134,7 +120,7 @@ public class SearchPageFactory {
     }
 
     //步骤集合
-    public void searchPage(String flightOrigin, String flightDestination, String flightDeparting) {
+    public void searchPage1(String flightOrigin, String flightDestination, String flightDeparting) {
         clicTabfightTab();
         clickFightTab();
         setFlightOrigin(flightOrigin);
