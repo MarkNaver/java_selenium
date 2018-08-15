@@ -8,17 +8,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class ContractFactoryBase {
-    private static final Logger log = LogManager.getLogger(ContractFactoryBase.class.getName());
+    //    private static final Logger log = LogManager.getLogger(ContractFactoryBase.class.getName());
+    public static final Logger log = LogManager.getLogger(ContractFactoryBase.class.getName());
 
     /*
     合同系统元素工厂
      */
     private WebDriver driver;
-
     //输入用户名
     @FindBy(id = "uid")
     private WebElement username;
-
     //输入密码
     @FindBy(id = "pwd")
     private WebElement password;
