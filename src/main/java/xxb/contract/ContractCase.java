@@ -5,7 +5,10 @@ import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -13,12 +16,16 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageclasses.ExtentFactory;
 
+import java.util.Map;
+
 public class ContractCase extends TestSuiteBaseDemo {
     private ContractFactoryBase search;
+    public static final Logger log = LogManager.getLogger(ContractCase.class.getName());
 
     //高级测试报告
     private ExtentReports reports;
     private ExtentTest test;
+
 
 
     @BeforeClass
@@ -35,13 +42,41 @@ public class ContractCase extends TestSuiteBaseDemo {
 
     @Test
     public void AddCustomer() throws InterruptedException {
+        Map map = RandomDataCenter.getAddress();
+
         search.LoginContract("adminceshi", "123abc,.;");
         search.Customer();
+
         search.ToolTables();
-        search.subCustomerName("fsdlfsl123");
+        search.subCustomerName((String) map.get("name"));
         search.selectIndustry();
+        search.selectProvinceState();//注册地国家
+        search.selectProvinceUid();
+        search.inputContactName(RandomDataCenter.getAddress().get("name"));
+        search.inputContactPhone(RandomDataCenter.getAddress().get("tel"));
+        search.inputContactEmail(RandomDataCenter.getAddress().get("email"));
+        search.selectPayMethod();//付款方式
+        search.inputBusinessName(RandomDataCenter.getAddress().get("name"));
+        search.inputBusinessPhone(RandomDataCenter.getAddress().get("tel"));
+        search.inputBusinessEmail(RandomDataCenter.getAddress().get("email"));
         search.scroll();
-        Thread.sleep(1500);
+        search.selectCertType();
+        search.inputIdNo("123123123");
+        search.inputAddress(RandomDataCenter.getAddress().get("road"));
+        search.selectCustBelong();
+        search.inputUserName(RandomDataCenter.getAddress().get("email"));
+        search.inputUserPass("123abc,.;");
+        search.inputUserPhone(RandomDataCenter.getAddress().get("tel"));
+        search.inputUserEmail(RandomDataCenter.getAddress().get("email"));
+        search.setAddButton();
+        Thread.sleep(3000);
+        search.inputCustomerName((String) map.get("name"));
+        search.clickSearchB();
+
+        boolean result = search.isTitleBarPresent();
+        Assert.assertTrue(result);
+        test.log(LogStatus.PASS, "用例执行成功了呢");
+        Thread.sleep(3000);
     }
 
     @AfterMethod

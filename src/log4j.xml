@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Configuration>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="Log4j2Xml"
+            prefHeight="400.0" prefWidth="600.0">
     <Properties>
         <!--设定日志文件路径-->
         <Property name="basePath">./logs</Property>
@@ -22,7 +31,7 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="com.learning" level="info" additivity="true">
+        <Logger name="log4jtutorial" level="info">
             <AppenderRef ref="Console"/>
             <!--<AppenderRef ref="log"/>-->
         </Logger>
@@ -30,4 +39,4 @@
             <AppenderRef ref="File"/>
         </Root>
     </Loggers>
-</Configuration>
+</AnchorPane>

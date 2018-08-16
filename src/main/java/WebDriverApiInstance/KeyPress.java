@@ -24,7 +24,7 @@ public class KeyPress {
     }
 
     @Test
-    public void testKeyPress() throws Exception {
+    public void testKeyPress() {
         driver.get(baseUrl);
         driver.findElement(By.id("login-username")).sendKeys("test");
 

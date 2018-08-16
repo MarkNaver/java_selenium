@@ -11,7 +11,7 @@ public class SeleniumGrid_TestFramework extends TestSuitBase {
     private WebDriver driver;
 
     @BeforeClass
-    public void setUp() throws Exception {
+    public void setUp() {
 
     }
 
@@ -23,7 +23,7 @@ public class SeleniumGrid_TestFramework extends TestSuitBase {
     }
 
     @AfterClass
-    public void tearDown() throws Exception {
+    public void tearDown() {
 
     }
 }

@@ -1,14 +1,13 @@
 package testSuite;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pageclasses.SearchPageFactory;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -22,7 +21,7 @@ public class FindLinks {
 
     @BeforeClass
     @Parameters({"url"})
-    public void setUp(String url) throws Exception {
+    public void setUp(String url) {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
