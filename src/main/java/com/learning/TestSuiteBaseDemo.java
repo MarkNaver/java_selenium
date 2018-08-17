@@ -1,5 +1,6 @@
 package com.learning;
 
+import Tools.DriverPath;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -24,16 +25,34 @@ public class TestSuiteBaseDemo {
 
     private static WebDriver getDriverInstance(String browser, String url) {
         WebDriver driver = null;
-
+        String osname = System.getProperty("os.name");
+        String path;
         // Browsers
+
         if (browser.equalsIgnoreCase("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", "./src/main/java/Tools/chromedriver");
-            driver = new ChromeDriver();
-            log.info("选择了Chrome浏览器。。。");
+            if (osname.contains("Mac")) {
+                path = DriverPath.getPath() + "/chromedriver";
+                System.setProperty("webdriver.chrome.driver", path);
+                driver = new ChromeDriver();
+                log.info("选择了MAC_Chrome浏览器。。。");
+            } else {
+                path = DriverPath.getPath() + "/chromedriver.exe";
+                System.setProperty("webdriver.chrome.driver", path);
+                driver = new ChromeDriver();
+                log.info("选择了Windows_Chrome浏览器。。。");
+            }
         } else if (browser.equalsIgnoreCase("Firefox")) {
-            System.setProperty("webdriver.gecko.driver", "./src/main/java/Tools/geckodriver");
-            driver = new FirefoxDriver();
-            log.info("Firefox。。。");
+            if (osname.contains("Mac")) {
+                path = DriverPath.getPath() + "/geckodriver";
+                System.setProperty("webdriver.gecko.driver", path);
+                driver = new FirefoxDriver();
+                log.info("选择了MAC_Firefox浏览器。。。");
+            } else {
+                path = DriverPath.getPath() + "/geckodriver.exe";
+                System.setProperty("webdriver.gecko.driver", path);
+                driver = new FirefoxDriver();
+                log.info("选择了Windows_Firefox浏览器。。。");
+            }
         } else if (browser.equalsIgnoreCase("Chrome_headless")) {
             //可能会报错。。。待解决
             ChromeOptions chromeOptions = new ChromeOptions();
