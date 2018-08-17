@@ -2,16 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--多浏览器、多线程并行测试-->
 <suite name="All Test Suite">
-    <test name="Chrome Test" enabled="false">
+    <test name="Firefox Test" enabled="true">
         <parameter name="browser" value="Firefox"/>
         <parameter name="url" value="https://www.expedia-cn.com"/>
         <classes>
-            <class name="com.learning.SeleniumTestFramework"/>
+            <class name="com.learning.SeleniumHotelCase"/>
 
         </classes>
     </test>
 
-    <test name="Firefox Test" enabled="true">
+    <test name="Chrome Test" enabled="false">
         <parameter name="browser" value="Chrome"/>
         <parameter name="url" value="https://www.expedia-cn.com/"/>
         <classes>
