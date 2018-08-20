@@ -95,6 +95,8 @@ public class HotelsFactoryDemo {
 
     void setSearchButton() {
         searchButton.click();
+        log.info("点击了搜索按钮");
+
     }
 
     public void searchHotels(String data1, String data2, String data3) {

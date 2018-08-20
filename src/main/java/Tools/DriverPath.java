@@ -5,7 +5,6 @@ import java.io.File;
 public class DriverPath {
     /**
      * 返回driver路径
-     *
      * @return
      */
     public static String getPath() {

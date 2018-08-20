@@ -8,12 +8,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class ContractFactoryBase {
+public class ContractCustomerFactoryBase {
 
-    private static final Logger log = LogManager.getLogger(ContractFactoryBase.class.getName());
+    private static final Logger log = LogManager.getLogger(ContractCustomerFactoryBase.class.getName());
 
-    /*
-    合同系统元素工厂
+    /**
+     * 合同系统-添加客户元素工厂
      */
     private WebDriver driver;
     //输入用户名
@@ -209,7 +209,7 @@ public class ContractFactoryBase {
         log.info("输入主用户手机号");
     }
 
-    public ContractFactoryBase(WebDriver driver) {
+    public ContractCustomerFactoryBase(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -281,8 +281,6 @@ public class ContractFactoryBase {
         log.info("点击检索按钮");
     }
 
-//    @FindBy(xpath = "//tr[@class='odd']//td[4]//div[1]")
-//    private WebElement chickYes;
 
     public boolean isTitleBarPresent() {
         WebElement titleBar;

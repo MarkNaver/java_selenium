@@ -3,6 +3,7 @@ package com.learning;
 import Tools.DriverPath;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,12 +13,11 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-import xxb.contract.ContractFactoryBase;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestSuiteBaseDemo {
-    private static final Logger log = LogManager.getLogger(ContractFactoryBase.class.getName());
+    private static final Logger log = LogManager.getLogger(TestSuiteBaseDemo.class.getName());
 
     protected WebDriver driver;
 
@@ -58,12 +58,16 @@ public class TestSuiteBaseDemo {
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
+            log.info("选择了Chrome无头浏览器。。。");
+
         } else if (browser.equalsIgnoreCase("Firefox_headless")) {
             FirefoxBinary firefoxBinary = new FirefoxBinary();
             firefoxBinary.addCommandLineOptions("--headless");
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.setBinary(firefoxBinary);
             driver = new FirefoxDriver(firefoxOptions);
+            log.info("选择了Firefox无头浏览器。。。");
+
         }
         // Open the Application
         try {
@@ -72,6 +76,11 @@ public class TestSuiteBaseDemo {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
             driver.get(url);
+            log.info("打开了浏览器");
+            driver.findElement(By.id("uid")).sendKeys("adminceshi");
+            driver.findElement(By.id("pwd")).sendKeys("123abc,.;");
+            driver.findElement(By.xpath("//input[@value='登录']")).click();
+            log.info("输入了管理员用户名和密码并点击了登录按钮");
         } catch (Exception e) {
             e.getMessage();
         }

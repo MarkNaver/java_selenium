@@ -18,25 +18,23 @@ import pageclasses.ExtentFactory;
 
 import java.util.Map;
 
-public class ContractCase extends TestSuiteBaseDemo {
-    private ContractFactoryBase search;
-    public static final Logger log = LogManager.getLogger(ContractCase.class.getName());
+public class AddCustomerCase extends TestSuiteBaseDemo {
+    public static final Logger log = LogManager.getLogger(AddCustomerCase.class.getName());
+    private ContractCustomerFactoryBase search;
 
     //高级测试报告
     private ExtentReports reports;
     private ExtentTest test;
 
-
-
     @BeforeClass
     public void beforeClass() {
         //每个测试类都需要初始化对象仓库
-        search = PageFactory.initElements(driver, ContractFactoryBase.class);
+        search = PageFactory.initElements(driver, ContractCustomerFactoryBase.class);
 
         //高级测试报告
         reports = ExtentFactory.GetInstance();
         //报告的名称
-        test = reports.startTest("ContractCase -> 添加客户");
+        test = reports.startTest("AddCustomerCase -> 添加客户");
 
     }
 

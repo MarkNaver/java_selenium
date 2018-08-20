@@ -1,9 +1,12 @@
-package com.learning;
+package xxb.contract;
 
 import WebDriverApiInstance.ScreenshotsDemo;
+import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -13,9 +16,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageclasses.ExtentFactory;
 
-public class SeleniumHotelCase extends TestSuiteBaseDemo {
-    private HotelsFactoryDemo hotelsFactoryDemo;
+import java.util.Map;
 
+public class AddContractCase extends TestSuiteBaseDemo {
+    public static final Logger log = LogManager.getLogger(AddContractCase.class.getName());
+    private AddContractFactoryBase search;
     //高级测试报告
     private ExtentReports reports;
     private ExtentTest test;
@@ -24,42 +29,42 @@ public class SeleniumHotelCase extends TestSuiteBaseDemo {
     @BeforeClass
     public void beforeClass() {
         //每个测试类都需要初始化对象仓库
-        hotelsFactoryDemo = PageFactory.initElements(driver, HotelsFactoryDemo.class);
+        search = PageFactory.initElements(driver, AddContractFactoryBase.class);
 
         //高级测试报告
         reports = ExtentFactory.GetInstance();
         //报告的名称
-        test = reports.startTest("SeleniumHotelCase -> 查找酒店");
+        test = reports.startTest("AddContractCase -> 添加合同");
 
     }
 
     @Test
-    public void searchFlights() {
-//        hotelsFactoryDemo.searchHotels("东京, 日本 (TYO-所有机场)","2018/09/24","2018/10/24");
-        hotelsFactoryDemo.clickHotel();
-        test.log(LogStatus.INFO, "点击了酒店按钮");
+    public void AddCustomer() throws InterruptedException {
+        Map map = RandomDataCenter.getAddress();
+//        search.LoginContract("adminceshi", "123abc,.;");
+        search.setAddContractButton();
+        search.setNoGenerateWorkOrder();
+        search.setSearchCustomerName("奥巴马123");
+        Thread.sleep(1200);
+        search.setUimenuitem();
+        search.setBeginDate("2018-08-22");
+        search.setDataButton();
+        search.setEndDate("2018-08-28");
+        search.setEnddataButton();
+        search.setSecondParty();
+        search.setPaymentMethod();
 
-        hotelsFactoryDemo.sendDestination("东京, 日本 (TYO-所有机场)");
-        test.log(LogStatus.INFO, "输入了目的地");
+        //输入备注
+        search.setMem("selenium test");
+        search.setProductName("北京兆维空间租用1U");
+        Thread.sleep(1200);
+        search.setUimenuitem1();
+        search.setQty("2");
+        search.setFactPrice("444");
+        search.setSaveBtn();
+        Thread.sleep(5000);
 
-        hotelsFactoryDemo.clickWizardTitle();
-        test.log(LogStatus.INFO, "输入目的地后切换焦点，避免元素遮挡");
-
-
-        hotelsFactoryDemo.clickWizardTitle();
-        test.log(LogStatus.INFO, "点击了搜索酒店文字");
-
-        hotelsFactoryDemo.sendCheckin("2018/09/24");
-        test.log(LogStatus.INFO, "输入了入住日期");
-
-        hotelsFactoryDemo.sendCheckout("2018/10/04");
-        test.log(LogStatus.INFO, "输入了离店时间");
-
-//        clickClose();
-        hotelsFactoryDemo.setSearchButton();
-        test.log(LogStatus.INFO, "点击了搜索按钮");
-
-        boolean result = hotelsFactoryDemo.isTitleBarPresent();
+        boolean result = search.isSavedSuccessfully();
         Assert.assertTrue(result);
         test.log(LogStatus.PASS, "用例执行成功");
     }
@@ -77,8 +82,10 @@ public class SeleniumHotelCase extends TestSuiteBaseDemo {
         reports.endTest(test);
         reports.flush();
     }
+
     @AfterClass
     public void tearDown() {
 
     }
+
 }
