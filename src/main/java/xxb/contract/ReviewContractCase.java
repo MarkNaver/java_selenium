@@ -34,7 +34,7 @@ public class ReviewContractCase extends TestSuiteBaseDemo {
         //高级测试报告
         reports = ExtentFactory.GetInstance();
         //报告的名称
-        test = reports.startTest("ReviewContractCase -> 审核合同");
+        test = reports.startTest("ReviewContractCase -> 合同提审");
 
     }
 
@@ -57,7 +57,7 @@ public class ReviewContractCase extends TestSuiteBaseDemo {
         boolean result = search.isReviewSuccessfully();
         Assert.assertTrue(result);
         test.log(LogStatus.PASS, "用例执行成功");
-        Thread.sleep(30000);
+        Thread.sleep(1000);
     }
 
     @AfterMethod
@@ -77,7 +77,7 @@ public class ReviewContractCase extends TestSuiteBaseDemo {
 
     @AfterClass
     public void tearDown() {
-        driver.quit();
+//        driver.quit();
     }
 
 }

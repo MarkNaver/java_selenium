@@ -22,7 +22,7 @@ public class ReviewContractFactoryBase {
     /**
      * 合同系统-审核合同
      */
-    @FindBy(xpath = "//a[contains(text(),'合同新增')]")
+    @FindBy(xpath = "//a[contains(text(),'合同提审')]")
     private WebElement addContractButton;
     private WebDriver driver;
     @FindBy(id = "search.customerName")

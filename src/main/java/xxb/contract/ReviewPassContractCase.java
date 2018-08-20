@@ -1,6 +1,7 @@
 package xxb.contract;
 
 import WebDriverApiInstance.ScreenshotsDemo;
+import com.config.selenium.fileChaseFW;
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -16,56 +17,52 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageclasses.ExtentFactory;
 
-import java.util.Map;
-
-public class AddContractCase extends TestSuiteBaseDemo {
-    public static final Logger log = LogManager.getLogger(AddContractCase.class.getName());
-    private AddContractFactoryBase search;
+public class ReviewPassContractCase extends TestSuiteBaseDemo {
+    public static final Logger log = LogManager.getLogger(ReviewPassContractCase.class.getName());
+    private ReviewPassContractFactoryBase search;
     //高级测试报告
     private ExtentReports reports;
     private ExtentTest test;
+//    private fileChaseFW fie;
 
 
     @BeforeClass
     public void beforeClass() {
         //每个测试类都需要初始化对象仓库
-        search = PageFactory.initElements(driver, AddContractFactoryBase.class);
+        search = PageFactory.initElements(driver, ReviewPassContractFactoryBase.class);
 
         //高级测试报告
         reports = ExtentFactory.GetInstance();
         //报告的名称
-        test = reports.startTest("AddContractCase -> 添加合同");
+        test = reports.startTest("ReviewPassContractCase -> 审核合同");
 
     }
 
     @Test
     public void AddCustomer() throws InterruptedException {
-        Map map = RandomDataCenter.getAddress();
-//        search.LoginContract("adminceshi", "123abc,.;");
-        search.setAddContractButton();
-        search.setNoGenerateWorkOrder();
+        search.setContractReviewButton();
         search.setSearchCustomerName("奥巴马123");
-        Thread.sleep(1200);
-        search.setUimenuitem();
-        search.setBeginDate("2018-08-22");
-        search.setDataButton();
-        search.setEndDate("2018-08-28");
-        search.setEnddataButton();
-        search.setSecondParty();
-        search.setPaymentMethod();
-
-        //输入备注
-        search.setMem("selenium test");
-        search.setProductName("北京兆维空间租用1U");
-        Thread.sleep(1200);
         search.setUimenuitem1();
-        search.setQty("2");
-        search.setFactPrice("444");
-        search.setSaveBtn();
-        Thread.sleep(2000);
+        search.setSearchButton();
+        search.setBtnReview();
+        search.switchTwoWindowsHandle();
+        search.setreviewBtn();
+        search.reviewAlert();
+        search.switchOneWindowsHandle();
 
-        boolean result = search.isSavedSuccessfully();
+        //终审阶段，待续
+        search.setSearchCustomerName("奥巴马123");
+        search.setUimenuitem1();
+        search.setSearchButton();
+        search.setAuditButton();
+        search.switchTwoWindowsHandle();
+
+        search.setReviewButtonPass();
+
+        fileChaseFW.fileChase("./src/main/java/com/dataCenter/data.txt", search.No());
+        boolean result = search.isReviewSuccessfully();
         Assert.assertTrue(result);
+        search.setoKAndReturnButton();
         test.log(LogStatus.PASS, "用例执行成功");
     }
 
@@ -77,6 +74,7 @@ public class AddContractCase extends TestSuiteBaseDemo {
             String path = ScreenshotsDemo.takeScreenshots(driver, result.getName());
             String imagePath = test.addScreenCapture(path);
             test.log(LogStatus.FAIL, "执行失败了", imagePath);
+//            driver.quit();
 
         }
         reports.endTest(test);
@@ -85,7 +83,7 @@ public class AddContractCase extends TestSuiteBaseDemo {
 
     @AfterClass
     public void tearDown() {
-
+        driver.quit();
     }
 
 }
