@@ -1,6 +1,6 @@
 //package testSuite;
 //
-////import WebDriverApiInstance.GenericMethods;
+////import webdriverapiInstance.GenericMethods;
 ////import com.config.selenium.LOGGER;
 //import com.config.selenium.LogType;
 //import org.openqa.selenium.WebDriver;

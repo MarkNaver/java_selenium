@@ -18,7 +18,7 @@ import pageclasses.ExtentFactory;
 
 import java.util.Map;
 
-import com.dataCenter.GetData;
+import com.datacenter.GetData;
 
 
 public class AddContractCase extends TestSuiteBaseDemo {

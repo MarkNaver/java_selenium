@@ -1,4 +1,4 @@
-//package WebDriverApiInstance;
+//package webdriverapiInstance;
 //
 //import com.config.selenium.LOGGER;
 //import com.config.selenium.LogType;

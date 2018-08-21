@@ -1,4 +1,4 @@
-package com.dataCenter;
+package com.datacenter;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,10 +17,4 @@ public class GetData {
         return format.format(c.getTime());
 
     }
-
-//    public static void main(String[] args) {
-//        System.out.println(getCurrentData());
-//        System.out.println(getCurrentData1());
-//    }
-
 }

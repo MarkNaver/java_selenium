@@ -1,6 +1,6 @@
 package testSuite;
 
-import com.ExeclDemo.ExeclUtility;
+import com.execldemo.ExeclUtility;
 import com.config.selenium.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

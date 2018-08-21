@@ -1,10 +1,9 @@
 package xxb.contract;
 
 <<<<<<< HEAD
-import WebDriverApiInstance.ScreenshotsDemo;
+import webdriverapiInstance.ScreenshotsDemo;
 import com.config.selenium.FileChaseFW;
 =======
-import com.config.selenium.FileChaseFW;
 import webDriverApiInstance.ScreenshotsDemo;
 >>>>>>> master
 import com.learning.TestSuiteBaseDemo;
@@ -64,7 +63,7 @@ public class ReviewPassContractCase extends TestSuiteBaseDemo {
 
         search.setReviewButtonPass();
 
-        FileChaseFW.fileChase("./src/main/java/com/dataCenter/data.txt", search.No());
+        FileChaseFW.fileChase("./src/main/java/com/datacenter/data.txt", search.No());
         boolean result = search.isReviewSuccessfully();
         Assert.assertTrue(result);
         search.setoKAndReturnButton();
