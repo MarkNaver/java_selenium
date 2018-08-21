@@ -6,8 +6,8 @@
         <parameter name="browser" value="Chrome"/>
         <parameter name="url" value="https://mail.qq.com"/>
         <classes>
-            <class name="testSuite.LoginQQEmail"/>
-            <!--<class name="testSuite.FrameworkTestCase3"/>-->
+            <class name="testsuite.LoginQQEmail"/>
+            <!--<class name="testsuite.FrameworkTestCase3"/>-->
 
         </classes>
     </test>

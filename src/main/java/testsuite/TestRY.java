@@ -1,4 +1,4 @@
-//package testSuite;
+//package testsuite;
 //
 //import com.contract.Case_Login;
 //

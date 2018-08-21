@@ -7,7 +7,7 @@
         <parameter name="url" value="https://www.expedia-cn.com"/>
         <classes>
             <class name="pageclasses.LoginTest"/>
-            <!--<class name="testSuite.FrameworkTestCase3"/>-->
+            <!--<class name="testsuite.FrameworkTestCase3"/>-->
 
         </classes>
     </test>

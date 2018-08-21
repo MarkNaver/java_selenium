@@ -18,7 +18,7 @@
     <!--<parameter name="version" value="61.0.2"/>-->
     <!--<parameter name="url" value="https://www.expedia-cn.com"/>-->
     <!--<classes>-->
-    <!--<class name="testSuite.SeleniumGrid_TestFramework"/>-->
+    <!--<class name="testsuite.SeleniumGrid_TestFramework"/>-->
     <!--</classes>-->
     <!--</test>-->
 

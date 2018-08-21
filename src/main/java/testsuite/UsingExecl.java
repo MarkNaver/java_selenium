@@ -1,4 +1,4 @@
-package testSuite;
+package testsuite;
 
 import com.execldemo.ExeclUtility;
 import com.config.selenium.Constants;

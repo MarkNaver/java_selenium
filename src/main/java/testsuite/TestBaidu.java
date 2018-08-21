@@ -1,4 +1,4 @@
-//package testSuite;
+//package testsuite;
 //
 ////import webdriverapiInstance.GenericMethods;
 ////import com.config.selenium.LOGGER;

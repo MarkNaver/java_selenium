@@ -6,7 +6,7 @@
         <parameter name="url" value="https://www.baidu.com/"/>
         <classes>
             <!--name为包名.类名-->
-            <class name="testSuite.FindLinks"/>
+            <class name="testsuite.FindLinks"/>
         </classes>
     </test>
 </suite>

@@ -8,28 +8,28 @@
         <parameter name="browser" value="Firefox"/>
         <classes>
             <!--name为包名.类名-->
-            <class name="testSuite.FrameworkTestCase"/>
+            <class name="testsuite.FrameworkTestCase"/>
         </classes>
     </test>
     <!--Chrome浏览器-->
     <test  name="Chrome Test" >
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="testSuite.FrameworkTestCase"/>
+            <class name="testsuite.FrameworkTestCase"/>
         </classes>
     </test>
     <!--Chrome无头浏览器-->
     <test  name="Chrome Headless Test" enabled="false">
         <parameter name="browser" value="Chrome_headless"/>
         <classes>
-            <class name="testSuite.FrameworkTestCase"/>
+            <class name="testsuite.FrameworkTestCase"/>
         </classes>
     </test>
     <!--Firefox无头浏览器-->
     <test  name="Firefox Headless Test" enabled="false">
         <parameter name="browser" value="Firefox_headless"/>
         <classes>
-            <class name="testSuite.FrameworkTestCase"/>
+            <class name="testsuite.FrameworkTestCase"/>
         </classes>
     </test>
 </suite>

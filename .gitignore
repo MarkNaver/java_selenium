@@ -19,5 +19,5 @@ test-output/testng-results.xml
 test-output/testng.css
 test-output/All Test Suite/Chrome Test.xml
 test-output/All Test Suite/testng-failed.xml
-test-output/junitreports/TEST-testSuite.FrameworkTestCase.xml
+test-output/junitreports/TEST-testsuite.FrameworkTestCase.xml
 test-output/old/All Test Suite/Chrome Test.properties
