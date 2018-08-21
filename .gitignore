@@ -4,3 +4,20 @@ logs/
 *target/
 src/test/
 .idea/
+selenium-java.iml
+test-output/bullet_point.png
+test-output/collapseall.gif
+test-output/failed.png
+test-output/jquery-1.7.1.min.js
+test-output/navigator-bullet.png
+test-output/passed.png
+test-output/skipped.png
+test-output/testng-failed.xml
+test-output/testng-reports.css
+test-output/testng-reports.js
+test-output/testng-results.xml
+test-output/testng.css
+test-output/All Test Suite/Chrome Test.xml
+test-output/All Test Suite/testng-failed.xml
+test-output/junitreports/TEST-testSuite.FrameworkTestCase.xml
+test-output/old/All Test Suite/Chrome Test.properties
