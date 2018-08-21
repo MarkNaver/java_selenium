@@ -1,8 +1,6 @@
 package testSuite;
 
-import webDriverApiInstance.ScreenshotsDemo;
-import com.config.selenium.LoggerDemoOne;
-import com.config.selenium.LogType;
+import WebDriverApiInstance.ScreenshotsDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -27,7 +25,6 @@ import pageclasses.SearchPageFactory;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-//import org.junit.BeforeClass;
 
 public class FrameworkTestCase {
     private WebDriver driver;
@@ -61,7 +58,7 @@ public class FrameworkTestCase {
             driver = new FirefoxDriver(firefoxOptions);
         }
         test.log(LogStatus.INFO,"寻找到了合适的浏览器并且打开了");
-        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "从配置文件中获取登录名：");
+//        LOGGER.Output(LogType.LogTypeName.INFO, "从配置文件中获取登录名：");
 
 
         searchPage = new SearchPageFactory(driver);
