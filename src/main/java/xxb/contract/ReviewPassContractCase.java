@@ -1,7 +1,12 @@
 package xxb.contract;
 
+<<<<<<< HEAD
 import WebDriverApiInstance.ScreenshotsDemo;
 import com.config.selenium.FileChaseFW;
+=======
+import com.config.selenium.FileChaseFW;
+import webDriverApiInstance.ScreenshotsDemo;
+>>>>>>> master
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;

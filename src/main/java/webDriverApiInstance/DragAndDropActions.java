@@ -1,4 +1,4 @@
-package WebDriverApiInstance;
+package webDriverApiInstance;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,29 +11,32 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class SliderActions {
-    //滑块动作 可设置横向或纵向坐标
+public class DragAndDropActions {
+    //按住并移动元素到某个元素上
     private WebDriver driver;
     private String baseUrl;
 
     @BeforeClass
     public void setUp() {
         driver = new ChromeDriver();
-        baseUrl = "http://jqueryui.com/slider/";
+        baseUrl = "http://jqueryui.com/droppable/";
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @Test
-    public void testSliderActions() throws Exception {
+    public void testDragAndDropActions() throws Exception {
         driver.get(baseUrl);
-        driver.switchTo().frame(0);
         Thread.sleep(2222);
-        WebElement element = driver.findElement(By.xpath("//div[@id='slider']/span"));
+        driver.switchTo().frame(0);
 
-        //用Actions类操作
-        Actions actions = new Actions(driver);
-        actions.dragAndDropBy(element, 300, 0).perform();
+        WebElement fromElement = driver.findElement(By.id("draggable"));
+        WebElement toElement = driver.findElement(By.id("droppable"));
+
+        Actions action = new Actions(driver);
+
+        action.clickAndHold(fromElement).moveToElement(toElement).release().build().perform();
 
     }
 

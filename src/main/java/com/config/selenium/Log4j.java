@@ -3,11 +3,11 @@ package com.config.selenium;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class log4j {
+public class Log4j {
     private final Class<?> aClass;
     private Logger logger;
 
-    log4j(Class<?> aClass) {
+    Log4j(Class<?> aClass) {
         this.aClass = aClass;
         this.logger = LogManager.getLogger(this.aClass);
     }

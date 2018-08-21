@@ -1,47 +1,46 @@
-package WebDriverApiInstance;
+package webDriverApiInstance;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class DragAndDropActions {
-    //按住并移动元素到某个元素上
+public class SwithchFrame {
+    //切换iframe内嵌框架
     private WebDriver driver;
     private String baseUrl;
+
 
     @BeforeClass
     public void setUp() {
         driver = new ChromeDriver();
-        baseUrl = "http://jqueryui.com/droppable/";
-
+        baseUrl = "https://jqueryui.com/datepicker/";
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get(baseUrl);
+
     }
 
     @Test
-    public void testDragAndDropActions() throws Exception {
-        driver.get(baseUrl);
-        Thread.sleep(2222);
+    public void test() throws InterruptedException {
         driver.switchTo().frame(0);
+//        driver.switchTo().frame("id");
+//        driver.switchTo().frame("name");
 
-        WebElement fromElement = driver.findElement(By.id("draggable"));
-        WebElement toElement = driver.findElement(By.id("droppable"));
-
-        Actions action = new Actions(driver);
-
-        action.clickAndHold(fromElement).moveToElement(toElement).release().build().perform();
-
+        WebElement dataPicker = driver.findElement(By.id("datepicker"));
+        dataPicker.click();
+        Thread.sleep(3333);
+        driver.switchTo().defaultContent();
+        driver.findElement(By.xpath("//input[@name='s']")).sendKeys("测试成功");
     }
 
     @AfterClass
-    public void tearDown() throws Exception {
+    public void tearDown() throws InterruptedException {
         Thread.sleep(3000);
         driver.quit();
     }
