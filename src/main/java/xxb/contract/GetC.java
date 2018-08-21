@@ -1,5 +1,7 @@
 package xxb.contract;
 
+import com.config.selenium.FileChaseFW;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,11 +17,12 @@ public class GetC {
 //
 //
 ////        driver.quit();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DAY_OF_MONTH,10);
-        System.out.println(format.format(c.getTime()));
-        String data1 = format.format(new Date());
-        System.out.println(data1);
+//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+//        Calendar c = Calendar.getInstance();
+//        c.add(Calendar.DAY_OF_MONTH,10);
+//        System.out.println(format.format(c.getTime()));
+//        String data1 = format.format(new Date());
+//        System.out.println(data1);
+        FileChaseFW.readEndData("./src/main/java/com/datacenter/data.txt");
     }
 }
