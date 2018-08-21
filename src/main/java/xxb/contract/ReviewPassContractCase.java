@@ -1,11 +1,7 @@
 package xxb.contract;
 
-<<<<<<< HEAD
-import webdriverapiInstance.ScreenshotsDemo;
+
 import com.config.selenium.FileChaseFW;
-=======
-import webDriverApiInstance.ScreenshotsDemo;
->>>>>>> master
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -20,6 +16,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageclasses.ExtentFactory;
+import webdriverapiInstance.ScreenshotsDemo;
 
 public class ReviewPassContractCase extends TestSuiteBaseDemo {
     public static final Logger log = LogManager.getLogger(ReviewPassContractCase.class.getName());

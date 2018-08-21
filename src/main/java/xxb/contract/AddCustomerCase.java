@@ -1,6 +1,5 @@
 package xxb.contract;
 
-import webDriverApiInstance.ScreenshotsDemo;
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -15,6 +14,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageclasses.ExtentFactory;
+import webdriverapiInstance.ScreenshotsDemo;
 
 import java.util.Map;
 

@@ -1,6 +1,5 @@
 package testsuite;
 
-import webDriverApiInstance.ScreenshotsDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -22,6 +21,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageclasses.ExtentFactory;
 import pageclasses.SearchPageFactory;
+import webdriverapiInstance.ScreenshotsDemo;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;

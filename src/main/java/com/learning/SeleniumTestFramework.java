@@ -1,6 +1,5 @@
 package com.learning;
 
-import webDriverApiInstance.ScreenshotsDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -11,6 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageclasses.ExtentFactory;
+import webdriverapiInstance.ScreenshotsDemo;
 
 public class SeleniumTestFramework extends TestSuiteBaseDemo {
     protected SearchPageFactoryDemoT search;

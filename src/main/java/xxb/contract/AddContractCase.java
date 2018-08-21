@@ -1,6 +1,5 @@
 package xxb.contract;
 
-import webDriverApiInstance.ScreenshotsDemo;
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -19,6 +18,7 @@ import pageclasses.ExtentFactory;
 import java.util.Map;
 
 import com.datacenter.GetData;
+import webdriverapiInstance.ScreenshotsDemo;
 
 
 public class AddContractCase extends TestSuiteBaseDemo {
