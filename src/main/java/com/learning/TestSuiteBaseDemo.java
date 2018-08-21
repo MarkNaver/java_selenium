@@ -21,7 +21,6 @@ public class TestSuiteBaseDemo {
 
     protected WebDriver driver;
 
-//    protected SearchPageFactoryDemoT search;
 
     private static WebDriver getDriverInstance(String browser, String url) {
         WebDriver driver = null;
