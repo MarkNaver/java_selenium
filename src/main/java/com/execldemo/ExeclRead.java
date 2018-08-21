@@ -12,7 +12,7 @@ public class ExeclRead {
         XSSFSheet xssfSheet;
         XSSFCell xssfCell;
 
-        String path = "./src/main/java/com/execldemo.xlsx";
+        String path = "./src/main/java/com/execldemo/execldemo.xlsx";
         String sheetNmae = "LoginTests";
         try {
             FileInputStream fileInputStream = new FileInputStream(path);
