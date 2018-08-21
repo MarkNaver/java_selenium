@@ -3,7 +3,7 @@
 //import java.io.IOException;
 //import java.util.concurrent.TimeUnit;
 //
-//import WebDriverApiInstance.ScreenshotsDemo;
+//import webDriverApiInstance.ScreenshotsDemo;
 //import com.config.selenium.Config;
 //import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;

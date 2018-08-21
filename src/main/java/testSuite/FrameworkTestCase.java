@@ -1,7 +1,7 @@
 package testSuite;
 
-import WebDriverApiInstance.ScreenshotsDemo;
-import com.config.selenium.LOGGER;
+import webDriverApiInstance.ScreenshotsDemo;
+import com.config.selenium.LoggerDemoOne;
 import com.config.selenium.LogType;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -61,7 +61,7 @@ public class FrameworkTestCase {
             driver = new FirefoxDriver(firefoxOptions);
         }
         test.log(LogStatus.INFO,"寻找到了合适的浏览器并且打开了");
-        LOGGER.Output(LogType.LogTypeName.INFO, "从配置文件中获取登录名：");
+        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "从配置文件中获取登录名：");
 
 
         searchPage = new SearchPageFactory(driver);

@@ -1,6 +1,6 @@
-package WebDriverApiInstance;
+package webDriverApiInstance;
 
-import com.config.selenium.LOGGER;
+import com.config.selenium.LoggerDemoOne;
 import com.config.selenium.LogType;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -44,7 +44,7 @@ public class Screenshots {
 
         driver.findElement(By.id("login-username")).sendKeys("test");
         driver.findElement(By.id("login-signin")).click();
-        LOGGER.Output(LogType.LogTypeName.INFO, "从配置文件中获取登录名：");
+        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "从配置文件中获取登录名：");
 
     }
 

@@ -1,8 +1,8 @@
 //package pageclasses;
 //
 //import com.config.selenium.Config;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
+//import org.apache.logging.Log4j.LogManager;
+//import org.apache.logging.Log4j.Logger;
 //import org.testng.Assert;
 //import org.testng.annotations.AfterClass;
 //import org.testng.annotations.BeforeClass;

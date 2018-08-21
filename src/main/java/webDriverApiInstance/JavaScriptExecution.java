@@ -1,4 +1,4 @@
-package WebDriverApiInstance;
+package webDriverApiInstance;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class javaScriptExecution {
+public class JavaScriptExecution {
     String baseUrl;
     private WebDriver driver;
     private JavascriptExecutor js;

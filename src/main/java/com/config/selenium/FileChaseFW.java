@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class fileChaseFW {
+public class FileChaseFW {
 
     /**
      * 数据写入文件，传入文件路径及写入的数据

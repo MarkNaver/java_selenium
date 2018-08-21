@@ -1,6 +1,6 @@
 package xxb.contract;
 
-import WebDriverApiInstance.ScreenshotsDemo;
+import webDriverApiInstance.ScreenshotsDemo;
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;

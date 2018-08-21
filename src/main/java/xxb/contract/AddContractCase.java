@@ -1,6 +1,6 @@
 package xxb.contract;
 
-import WebDriverApiInstance.ScreenshotsDemo;
+import webDriverApiInstance.ScreenshotsDemo;
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -17,6 +17,9 @@ import org.testng.annotations.Test;
 import pageclasses.ExtentFactory;
 
 import java.util.Map;
+
+import com.dataCenter.GetData;
+
 
 public class AddContractCase extends TestSuiteBaseDemo {
     public static final Logger log = LogManager.getLogger(AddContractCase.class.getName());
@@ -47,7 +50,7 @@ public class AddContractCase extends TestSuiteBaseDemo {
         search.setSearchCustomerName("奥巴马123");
         Thread.sleep(1200);
         search.setUimenuitem();
-        search.setBeginDate("2018-08-22");
+        search.setBeginDate(GetData.getCurrentData());
         search.setDataButton();
         search.setEndDate("2018-08-28");
         search.setEnddataButton();

@@ -1,6 +1,6 @@
-package WebDriverApiInstance;
+package webDriverApiInstance;
 
-import com.config.selenium.LOGGER;
+import com.config.selenium.LoggerDemoOne;
 import com.config.selenium.LogType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class testBaiduList {
+public class TestBaiduList {
 
     private WebDriver driver;
     private String baseUrl;
@@ -25,10 +25,10 @@ public class testBaiduList {
 
 //        System.setProperty("webdriver.chrome.driver", "D:\\selenium-chrome\\chromedriver.exe");
         driver = new ChromeDriver();
-        LOGGER.Output(LogType.LogTypeName.INFO, "创建chrome浏览器对象");
+        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "创建chrome浏览器对象");
         baseUrl = "https://www.baidu.com";
         driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
-        LOGGER.Output(LogType.LogTypeName.INFO, "隐式等待11s");
+        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "隐式等待11s");
         gm = new GenericMethods(driver);
 
 
@@ -37,7 +37,7 @@ public class testBaiduList {
     @Test
     public void testMethod() throws Exception {
         driver.get(baseUrl);
-        LOGGER.Output(LogType.LogTypeName.INFO, "打开百度首页");
+        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "打开百度首页");
 
 //        List<WebElement> elementList = gm.getElementList("kw","id");
         boolean result = gm.isElenmentPresent("kw", "id");
@@ -53,7 +53,7 @@ public class testBaiduList {
         System.out.println("元素再页面上存在吗" + result2);
 
 //        driver.findElement(By.id("su")).click();
-        LOGGER.Output(LogType.LogTypeName.INFO, "点击搜索按钮");
+        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "点击搜索按钮");
         Thread.sleep(3000);
     }
 
@@ -61,6 +61,6 @@ public class testBaiduList {
     public void tearDown() throws Exception {
         Thread.sleep(2000);
         driver.quit();
-        LOGGER.Output(LogType.LogTypeName.INFO, "退出浏览器");
+        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "退出浏览器");
     }
 }

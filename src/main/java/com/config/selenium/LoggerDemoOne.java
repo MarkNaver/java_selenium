@@ -6,14 +6,14 @@ import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class LOGGER {
+public class LoggerDemoOne {
 
     public static String OutputFileName = getDateTimeByFormat(new Date(), "yyyyMMdd_HHmmss");
     private static OutputStreamWriter outputStreamWriter;
     private static String logFileName;
     public static boolean LogFlag = true;
 
-    public LOGGER() {
+    public LoggerDemoOne() {
 
     }
 

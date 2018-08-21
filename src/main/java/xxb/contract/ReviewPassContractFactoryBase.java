@@ -1,7 +1,7 @@
 package xxb.contract;
 
 
-//import org.apache.log4j.xml.DOMConfigurator;
+//import org.apache.Log4j.xml.DOMConfigurator;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
