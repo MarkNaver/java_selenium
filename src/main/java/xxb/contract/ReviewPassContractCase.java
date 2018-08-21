@@ -1,7 +1,7 @@
 package xxb.contract;
 
 import WebDriverApiInstance.ScreenshotsDemo;
-import com.config.selenium.fileChaseFW;
+import com.config.selenium.FileChaseFW;
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -23,7 +23,7 @@ public class ReviewPassContractCase extends TestSuiteBaseDemo {
     //高级测试报告
     private ExtentReports reports;
     private ExtentTest test;
-//    private fileChaseFW fie;
+//    private FileChaseFW fie;
 
 
     @BeforeClass
@@ -59,7 +59,7 @@ public class ReviewPassContractCase extends TestSuiteBaseDemo {
 
         search.setReviewButtonPass();
 
-        fileChaseFW.fileChase("./src/main/java/com/dataCenter/data.txt", search.No());
+        FileChaseFW.fileChase("./src/main/java/com/dataCenter/data.txt", search.No());
         boolean result = search.isReviewSuccessfully();
         Assert.assertTrue(result);
         search.setoKAndReturnButton();
