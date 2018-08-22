@@ -181,12 +181,13 @@ public class InvoiceAddedFactoryBase {
     /**
      * 发票类型选择为普通发票
      */
-    void setInvoiceType() {
+    void setInvoiceType() throws InterruptedException {
         Select select = new Select(invoiceType);
         select.selectByIndex(2);
+        Thread.sleep(1000);
     }
 
-    @FindBy(id = "invoiceDiv")
+    @FindBy(xpath = "//a[@id='invoiceDiv']")
     private WebElement invoiceDiv;
 
     /**

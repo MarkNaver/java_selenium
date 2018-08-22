@@ -8,7 +8,11 @@ public class ExtentFactory {
         ExtentReports extentReports;
         String Path = "./logs/report-demo.html";
         extentReports = new ExtentReports(Path, false);
-        extentReports.addSystemInfo("Selenium Version", "3.6.0").addSystemInfo("Platform", "Mac");
+        extentReports
+                .addSystemInfo("Selenium Version", "3.6.0")
+                .addSystemInfo("Platform", "Mac")
+                .addSystemInfo("测试执行人","Mr.陶")
+                .addSystemInfo("Browser","Chrome");
         return extentReports;
     }
 }
