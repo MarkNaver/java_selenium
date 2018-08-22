@@ -2,7 +2,6 @@
 *.html
 logs/
 *target/
-src/test/
 .idea/
 selenium-java.iml
 test-output/bullet_point.png
