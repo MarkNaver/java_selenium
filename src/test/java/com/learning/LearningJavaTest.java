@@ -20,6 +20,7 @@ private static final Logger log = LogManager.getLogger(FrameworkTestCase.class.g
 
     @BeforeClass
     public void beforeClass() {
+        System.getProperty("webdriver.chrome.driver","./src/main/java/Tools/chromedriver");
         driver = new ChromeDriver();
         String baseUrl = "https://www.baidu.com/";
         driver.manage().window().maximize();
