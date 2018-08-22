@@ -8,31 +8,31 @@
     <artifactId>selenium-java</artifactId>
     <version>3.14.0</version>
     <!--<build>-->
-        <!--<plugins>-->
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                <!--<configuration>-->
-                    <!--<source>6</source>-->
-                    <!--<target>6</target>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-        <!--</plugins>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-compiler-plugin</artifactId>-->
+    <!--<configuration>-->
+    <!--<source>6</source>-->
+    <!--<target>6</target>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
     <!--</build>-->
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <!--<dependency>-->
-            <!--<groupId>org.testng</groupId>-->
-            <!--<artifactId>testng</artifactId>-->
-            <!--<version>6.14.3</version>-->
-            <!--<scope>test</scope>-->
+        <!--<groupId>org.testng</groupId>-->
+        <!--<artifactId>testng</artifactId>-->
+        <!--<version>6.14.3</version>-->
+        <!--<scope>test</scope>-->
         <!--</dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <!--<dependency>-->
-            <!--<groupId>org.seleniumhq.selenium</groupId>-->
-            <!--<artifactId>selenium-java</artifactId>-->
-            <!--<version>3.14.0</version>-->
+        <!--<groupId>org.seleniumhq.selenium</groupId>-->
+        <!--<artifactId>selenium-java</artifactId>-->
+        <!--<version>3.14.0</version>-->
         <!--</dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
@@ -141,24 +141,20 @@
         </repository>
     </repositories>
 
-    <profiles>
-        <profile>
-            <id>learningjavatest</id>
-            <build>
-                <defaultGoal>compile</defaultGoal>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.12.4</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>learningjavatest.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+
+    <build>
+        <defaultGoal>compile</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.4</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>./src/main/learningjavatest.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
