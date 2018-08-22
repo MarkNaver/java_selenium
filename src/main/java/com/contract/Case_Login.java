@@ -1,7 +1,7 @@
 package com.contract;
 
 import com.config.selenium.Browser;
-import com.config.selenium.LoggerDemoOne;
+//import com.config.selenium.LoggerDemoOne;
 import com.config.selenium.LogType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -40,7 +40,7 @@ public class Case_Login {
 
             username=p.getProperty("username");
             password = p.getProperty("password");
-            LoggerDemoOne.Output(LogType.LogTypeName.INFO, "从配置文件中获取登录名："+ username+"，密码："+password);
+//            LoggerDemoOne.Output(LogType.LogTypeName.INFO, "从配置文件中获取登录名："+ username+"，密码："+password);
         } catch (FileNotFoundException e) {
             System.out.println("未找到配置文件，读取用户名密码失败！");
             e.printStackTrace();
@@ -62,7 +62,7 @@ public class Case_Login {
             e.printStackTrace();
         }
         driver.findElement(By.xpath("//input[@value='登录']")).click();
-        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "登录合同系统");
+//        LoggerDemoOne.Output(LogType.LogTypeName.INFO, "登录合同系统");
 
     }
 

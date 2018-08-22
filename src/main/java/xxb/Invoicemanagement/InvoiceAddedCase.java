@@ -70,6 +70,8 @@ public class InvoiceAddedCase extends TestSuiteBaseDemo {
             String path = ScreenshotsDemo.takeScreenshots(driver, result.getName());
             String imagePath = test.addScreenCapture(path);
             test.log(LogStatus.FAIL, "执行失败了", imagePath);
+//            test.log(LogStatus.FATAL,result.getThrowable());
+
 
         }
         reports.endTest(test);
