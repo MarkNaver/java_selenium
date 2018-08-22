@@ -8,15 +8,15 @@ import java.io.IOException;
 public class FileChaseFW {
 
     /**
-     * 数据写入文件，传入文件路径及写入的数据
-     *
+     * 把合同编号及合同总价写入文件
      * @param filePath
-     * @param content
+     * @param ContractNo
+     * @param contractPrice
      */
-    public static void fileChase(String filePath, String content) {
+    public static void fileChase(String filePath, String ContractNo,String contractPrice) {
         try {
             FileWriter fileWriter = new FileWriter(filePath, true);
-            fileWriter.write(content + '\n');
+            fileWriter.write(ContractNo + "," + contractPrice + '\n');
             fileWriter.close();
         } catch (IOException e) {
             System.out.println("文件写入失败" + e);
@@ -28,9 +28,10 @@ public class FileChaseFW {
      *
      * @param filePath
      */
-    public static void readEndData(String filePath) {
+    public static String readEndData(String filePath) {
+        String str2 = null;
         try {
-            String str2 = null;
+//            String str2 = null;
             FileReader fileReader = new FileReader(filePath);
             BufferedReader br = new BufferedReader(fileReader);
             String str;
@@ -39,10 +40,11 @@ public class FileChaseFW {
             }
             br.close();
             fileReader.close();
-            System.out.println(str2);
+//            System.out.println(str2);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return str2;
     }
 
 }

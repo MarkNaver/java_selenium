@@ -161,6 +161,18 @@ public class ReviewPassContractFactoryBase {
         Thread.sleep(3500);
     }
 
+    @FindBy(xpath = "//td[@data-bind='text: frm.totalAmount']")
+    private WebElement contractPrice;
+
+    /**
+     * 获取合同总价
+     * @return
+     */
+    String setContractPrice() {
+        return contractPrice.getText();
+    }
+
+
     /**
      * 切换到第二个窗口
      */

@@ -39,7 +39,7 @@ public class ReviewContractCase extends TestSuiteBaseDemo {
     }
 
     @Test
-    public void AddCustomer() throws InterruptedException {
+    public void testReviewContractCase() throws InterruptedException {
         Map map = RandomDataCenter.getAddress();
         search.setAddContractButton();
         search.setSearchCustomerName("奥巴马123");

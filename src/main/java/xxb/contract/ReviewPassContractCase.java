@@ -40,7 +40,7 @@ public class ReviewPassContractCase extends TestSuiteBaseDemo {
     }
 
     @Test
-    public void AddCustomer() throws InterruptedException {
+    public void testReviewPassContractCase() throws InterruptedException {
         search.setContractReviewButton();
         search.setSearchCustomerName("奥巴马123");
         search.setUimenuitem1();
@@ -60,7 +60,7 @@ public class ReviewPassContractCase extends TestSuiteBaseDemo {
 
         search.setReviewButtonPass();
 
-        FileChaseFW.fileChase("./src/main/java/com/datacenter/data.txt", search.No());
+        FileChaseFW.fileChase("./src/main/java/com/datacenter/data.txt", search.No(),search.setContractPrice());
         boolean result = search.isReviewSuccessfully();
         Assert.assertTrue(result);
         search.setoKAndReturnButton();
@@ -85,6 +85,6 @@ public class ReviewPassContractCase extends TestSuiteBaseDemo {
     @AfterClass
     public void tearDown() {
         driver.quit();
-    }
+}
 
 }

@@ -6,9 +6,10 @@
         <parameter name="browser" value="Chrome"/>
         <parameter name="url" value="http://172.20.0.162:8080/"/>
         <classes>
-            <class name="xxb.contract.AddContractCase"/>
-            <class name="xxb.contract.ReviewContractCase"/>
-            <class name="xxb.contract.ReviewPassContractCase"/>
+            <!--<class name="xxb.contract.AddContractCase"/>-->
+            <!--<class name="xxb.contract.ReviewContractCase"/>-->
+            <!--<class name="xxb.contract.ReviewPassContractCase"/>-->
+            <class name="xxb.Invoicemanagement.InvoiceAddedCase"/>
         </classes>
     </test>
 

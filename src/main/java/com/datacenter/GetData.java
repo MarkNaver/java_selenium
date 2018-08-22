@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class GetData {
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    private static SimpleDateFormat serverData = new SimpleDateFormat("yyyyMM");
 
     public static String getCurrentData() {
         return format.format(new Date());
@@ -15,6 +16,9 @@ public class GetData {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_MONTH,7);
         return format.format(c.getTime());
+    }
 
+    public static String serverData() {
+        return serverData.format(new Date());
     }
 }

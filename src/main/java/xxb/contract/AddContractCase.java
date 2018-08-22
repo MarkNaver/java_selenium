@@ -42,7 +42,7 @@ public class AddContractCase extends TestSuiteBaseDemo {
     }
 
     @Test
-    public void AddCustomer() throws InterruptedException {
+    public void testAddContractCase() throws InterruptedException {
         Map map = RandomDataCenter.getAddress();
 //        search.LoginContract("adminceshi", "123abc,.;");
         search.setAddContractButton();
