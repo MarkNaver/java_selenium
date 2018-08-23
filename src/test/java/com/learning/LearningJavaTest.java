@@ -62,11 +62,12 @@ class LearningJavaTest {
     }
 
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         driver.findElement(By.id("kw")).sendKeys("Selenium");
         log.info("搜索selenium");
-        driver.findElement(By.id("su")).click();
 
+        driver.findElement(By.id("su")).click();
+        Thread.sleep(3000);
         System.out.println(driver.getTitle());
         log.info("输入网址");
         if (driver.getTitle().equals("Selenium_百度搜索")) {
