@@ -40,6 +40,7 @@ class LearningJavaTest {
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         driver.get(baseUrl);
         log.info("打开了浏览器");
+        System.out.println(driver.getTitle()+ ", " + driver.getCurrentUrl());
     }
 
     @Test
