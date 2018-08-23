@@ -27,7 +27,7 @@ class LearningJavaTest {
 //        System.setProperty("webdriver.chrome.driver","/var/jenkins_home/workspace/java+selenium3/src/main/java/Tools/chromedriver");
 //        driver = new ChromeDriver();
         String nodeURL = "http://47.94.100.252:4444/wd/hub";
-        WebDriver driver = null;
+//        WebDriver driver;
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setPlatform(Platform.UNIX);
         caps = DesiredCapabilities.chrome();
