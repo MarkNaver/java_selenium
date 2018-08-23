@@ -21,7 +21,7 @@ private static final Logger log = LogManager.getLogger(FrameworkTestCase.class.g
 
     @BeforeClass
     public void beforeClass() {
-        System.setProperty("webdriver.chrome.driver","/var/jenkins_home/workspace/java+selenium3/src/main/java/Tools/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/var/jenkins_home/workspace/java+selenium3/src/main/java/Tools/geckodriver");
         driver = new FirefoxDriver();
         String baseUrl = "https://www.baidu.com/";
         driver.manage().window().maximize();
