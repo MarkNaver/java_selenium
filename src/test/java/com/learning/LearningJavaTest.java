@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -21,7 +22,7 @@ private static final Logger log = LogManager.getLogger(FrameworkTestCase.class.g
     @BeforeClass
     public void beforeClass() {
         System.setProperty("webdriver.chrome.driver","/var/jenkins_home/workspace/java+selenium3/src/main/java/Tools/chromedriver");
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         String baseUrl = "https://www.baidu.com/";
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
