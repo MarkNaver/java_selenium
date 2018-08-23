@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -40,7 +41,7 @@ class LearningJavaTest {
         //高级测试报告
         reports = ExtentFactory.GetInstance();
         //报告的名称
-        test = reports.startTest("SeleniumHotelCase -> 查找酒店");
+        test = reports.startTest("LearningJavaTest -> 百度搜索Selenium");
 
         String nodeURL = "http://47.94.100.252:4444/wd/hub";
 //        WebDriver driver;
@@ -56,6 +57,7 @@ class LearningJavaTest {
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         driver.get(baseUrl);
         log.info("打开了浏览器");
+        test.log(LogStatus.INFO,"打开了浏览器");
         System.out.println(driver.getTitle()+ ", " + driver.getCurrentUrl());
     }
 
@@ -67,6 +69,11 @@ class LearningJavaTest {
         String url =  driver.getCurrentUrl();
         System.out.println(url);
         log.info("输入网址");
+        if (driver.getTitle().equals("Selenium_百度搜索")) {
+            test.log(LogStatus.PASS,"测试通过");
+        }else {
+            test.log(LogStatus.FATAL,"测试失败");
+        }
     }
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
