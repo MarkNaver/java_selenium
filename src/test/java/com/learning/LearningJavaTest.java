@@ -65,6 +65,7 @@ class LearningJavaTest {
     public void test() {
         driver.findElement(By.id("kw")).sendKeys("Selenium");
         log.info("搜索selenium");
+        driver.findElement(By.id("su")).click();
 
         System.out.println(driver.getTitle());
         log.info("输入网址");
