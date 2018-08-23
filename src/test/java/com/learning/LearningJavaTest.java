@@ -1,5 +1,8 @@
 package com.learning;//import com.config.selenium.LoggerDemoOne;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -9,10 +12,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pageclasses.ExtentFactory;
 import testsuite.FrameworkTestCase;
+import webdriverapiInstance.ScreenshotsDemo;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -21,11 +28,20 @@ import java.util.concurrent.TimeUnit;
 class LearningJavaTest {
     private WebDriver driver;
     private static final Logger log = LogManager.getLogger(FrameworkTestCase.class.getName());
+    //高级测试报告
+    private ExtentReports reports;
+    private ExtentTest test;
 
     @BeforeClass
     public void beforeClass() throws MalformedURLException {
 //        System.setProperty("webdriver.chrome.driver","/var/jenkins_home/workspace/java+selenium3/src/main/java/Tools/chromedriver");
 //        driver = new ChromeDriver();
+
+        //高级测试报告
+        reports = ExtentFactory.GetInstance();
+        //报告的名称
+        test = reports.startTest("SeleniumHotelCase -> 查找酒店");
+
         String nodeURL = "http://47.94.100.252:4444/wd/hub";
 //        WebDriver driver;
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -51,6 +67,19 @@ class LearningJavaTest {
         String url =  driver.getCurrentUrl();
         System.out.println(url);
         log.info("输入网址");
+    }
+    @AfterMethod
+    public void tearDown(ITestResult result) throws Exception {
+        Thread.sleep(1222);
+        //失败截图，并存入报告
+        if (result.getStatus() == ITestResult.FAILURE) {
+            String path = ScreenshotsDemo.takeScreenshots(driver, result.getName());
+            String imagePath = test.addScreenCapture(path);
+            test.log(LogStatus.FAIL, "执行失败了", imagePath);
+
+        }
+        reports.endTest(test);
+        reports.flush();
     }
 
     @AfterClass
