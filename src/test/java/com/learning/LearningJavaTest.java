@@ -66,8 +66,7 @@ class LearningJavaTest {
         driver.findElement(By.id("kw")).sendKeys("Selenium");
         log.info("搜索selenium");
 
-        String url =  driver.getCurrentUrl();
-        System.out.println(url);
+        System.out.println(driver.getTitle());
         log.info("输入网址");
         if (driver.getTitle().equals("Selenium_百度搜索")) {
             test.log(LogStatus.PASS,"测试通过");
