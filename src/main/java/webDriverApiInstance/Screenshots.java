@@ -1,4 +1,4 @@
-package webdriverapiInstance;
+package webDriverApiInstance;
 
 
 import org.apache.commons.io.FileUtils;
