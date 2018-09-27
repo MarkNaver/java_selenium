@@ -17,7 +17,7 @@
         <parameter name="browser" value="Chrome"/>
         <parameter name="url" value="http://172.20.0.162:8080/"/>
         <classes>
-            <class name="xxb.contract.AddCustomerCase"/>
+            <class name="xxb.contract.ContractCustomerFactoryBase"/>
 
         </classes>
     </test>
@@ -26,9 +26,13 @@
         <parameter name="browser" value="Firefox"/>
         <parameter name="url" value="https://www.expedia-cn.com/"/>
         <classes>
-            <class name="com.learning.SeleniumHotelCase"/>
+            <class name="com.learning.HotelsFactoryDemo"/>
 
         </classes>
     </test>
+    <!--<listeners>-->
+        <!--&lt;!&ndash; extent reports 监听类路径 &ndash;&gt;-->
+        <!--<listener class-name="ExtenNews.ExtentManger"/>-->
+    <!--</listeners>-->
 
 </suite>

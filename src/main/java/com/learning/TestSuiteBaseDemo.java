@@ -21,6 +21,10 @@ public class TestSuiteBaseDemo {
 
     protected WebDriver driver;
 
+    public WebDriver getDriver() {
+        return driver;
+    }
+
 
     private static WebDriver getDriverInstance(String browser, String url) {
         WebDriver driver = null;

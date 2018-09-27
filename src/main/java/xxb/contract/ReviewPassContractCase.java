@@ -5,7 +5,6 @@ import com.config.selenium.FileChaseFW;
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
@@ -15,8 +14,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageclasses.ExtentFactory;
-import webdriverapiInstance.ScreenshotsDemo;
 
 public class ReviewPassContractCase extends TestSuiteBaseDemo {
     public static final Logger log = LogManager.getLogger(ReviewPassContractCase.class.getName());
@@ -33,9 +30,9 @@ public class ReviewPassContractCase extends TestSuiteBaseDemo {
         search = PageFactory.initElements(driver, ReviewPassContractFactoryBase.class);
 
         //高级测试报告
-        reports = ExtentFactory.GetInstance();
+//        reports = ExtentFactory.GetInstance(ReviewPassContractCase.class.getSimpleName());
         //报告的名称
-        test = reports.startTest("ReviewPassContractCase -> 审核合同");
+//        test = reports.startTest("ReviewPassContractCase -> 审核合同");
 
     }
 
@@ -64,23 +61,23 @@ public class ReviewPassContractCase extends TestSuiteBaseDemo {
         boolean result = search.isReviewSuccessfully();
         Assert.assertTrue(result);
         search.setoKAndReturnButton();
-        test.log(LogStatus.PASS, "用例执行成功");
+//        test.log(LogStatus.PASS, "用例执行成功");
     }
 
-    @AfterMethod
-    public void tearDown(ITestResult result) throws Exception {
-        Thread.sleep(1222);
-        //失败截图，并存入报告
-        if (result.getStatus() == ITestResult.FAILURE) {
-            String path = ScreenshotsDemo.takeScreenshots(driver, result.getName());
-            String imagePath = test.addScreenCapture(path);
-            test.log(LogStatus.FAIL, "执行失败了", imagePath);
-//            driver.quit();
-
-        }
-        reports.endTest(test);
-        reports.flush();
-    }
+//    @AfterMethod
+//    public void tearDown(ITestResult result) throws Exception {
+//        Thread.sleep(1222);
+//        //失败截图，并存入报告
+//        if (result.getStatus() == ITestResult.FAILURE) {
+//            String path = ScreenshotsDemo.takeScreenshots(driver, result.getName());
+//            String imagePath = test.addScreenCapture(path);
+//            test.log(LogStatus.FAIL, "执行失败了", imagePath);
+////            driver.quit();
+//
+//        }
+//        reports.endTest(test);
+//        reports.flush();
+//    }
 
     @AfterClass
     public void tearDown() {

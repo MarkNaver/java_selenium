@@ -1,5 +1,6 @@
 package xxb.Invoicemanagement;
 
+
 import com.datacenter.GetData;
 import com.learning.TestSuiteBaseDemo;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -8,13 +9,16 @@ import com.relevantcodes.extentreports.LogStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+//import pageclasses.ExtentFactory;
 import pageclasses.ExtentFactory;
-import webdriverapiInstance.ScreenshotsDemo;
+import webDriverApiInstance.ScreenshotsDemo;
+//import webdriverapiInstance.ScreenshotsDemo;
 
 public class InvoiceAddedCase extends TestSuiteBaseDemo {
     public static final Logger log = LogManager.getLogger(InvoiceAddedCase.class.getName());
@@ -27,13 +31,14 @@ public class InvoiceAddedCase extends TestSuiteBaseDemo {
 
     @BeforeClass
     public void beforeClass() {
+
         //每个测试类都需要初始化对象仓库
         search = PageFactory.initElements(driver, InvoiceAddedFactoryBase.class);
 
         //高级测试报告
-        reports = ExtentFactory.GetInstance();
+        reports = ExtentFactory.GetInstance(InvoiceAddedCase.class.getSimpleName());
         //报告的名称
-        test = reports.startTest("ReviewPassContractCase -> 审核合同");
+        test = reports.startTest("InvoiceAddedCase -> 发票添加");
 
     }
 
@@ -59,6 +64,7 @@ public class InvoiceAddedCase extends TestSuiteBaseDemo {
         Thread.sleep(10000);
 
     }
+
 
 
 

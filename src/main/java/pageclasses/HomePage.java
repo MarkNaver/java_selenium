@@ -1,7 +1,6 @@
 package pageclasses;
 
 import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -21,20 +20,20 @@ public class HomePage {
     public void enterUserNameTextBox(String username) {
         WebElement emailField = driver.findElement(By.id("u"));
         emailField.sendKeys(username);
-        test.log(LogStatus.INFO, "Enter User Name");
+//        test.log(LogStatus.INFO, "Enter User Name");
 //        log.info("Enter User Name");
     }
 
     public void enterPasswordTextBox(String password) {
         WebElement passwordField = driver.findElement(By.id("p"));
         passwordField.sendKeys(password);
-        test.log(LogStatus.INFO, "Enter Password");
+//        test.log(LogStatus.INFO, "Enter Password");
     }
 
     public void clickOnLoginLink() {
         WebElement goButton = driver.findElement(By.id("login_button"));
         goButton.click();
-        test.log(LogStatus.INFO, "Clicked on login button");
+//        test.log(LogStatus.INFO, "Clicked on login button");
 
     }
 

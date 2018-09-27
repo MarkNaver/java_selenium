@@ -15,4 +15,11 @@ public class DriverPath {
                 File.separator + "Tools");
         return String.valueOf(file);
     }
+
+    /*
+                String workingDir = System.getProperty("user.dir");
+            extent = new ExtentReports(workingDir + "/logs/ExtenResult.html", true);
+
+     */
+
 }

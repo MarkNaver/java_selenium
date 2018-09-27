@@ -38,5 +38,6 @@
         <Root level="info">
             <AppenderRef ref="File"/>
         </Root>
+
     </Loggers>
 </AnchorPane>

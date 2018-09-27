@@ -4,132 +4,110 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>3.14.0</version>
-    <!--<build>-->
-    <!--<plugins>-->
-    <!--<plugin>-->
-    <!--<groupId>org.apache.maven.plugins</groupId>-->
-    <!--<artifactId>maven-compiler-plugin</artifactId>-->
-    <!--<configuration>-->
-    <!--<source>6</source>-->
-    <!--<target>6</target>-->
-    <!--</configuration>-->
-    <!--</plugin>-->
-    <!--</plugins>-->
-    <!--</build>-->
+    <groupId>com.cds.paas</groupId>
+    <artifactId>paas-autoTest</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <selenium.version>3.14.0</selenium.version>
+        <testng.version>6.14.3</testng.version>
+        <log4j-api.version>2.11.1</log4j-api.version>
+        <log4j-core.version>2.11.1</log4j-core.version>
+        <commons-io.version>2.4</commons-io.version>
+        <com.relevantcodes.version>2.41.2</com.relevantcodes.version>
+        <org.freemarker.version>2.3.28</org.freemarker.version>
+        <org.jsoup.version>1.11.3</org.jsoup.version>
+        <org.xerial.version>3.23.1</org.xerial.version>
+        <org.apache.poi.version>3.17</org.apache.poi.version>
+        <org.poi-ooxml.version>3.17</org.poi-ooxml.version>
+        <htmlunit.version>2.32</htmlunit.version>
+        <jsch.version>0.1.54</jsch.version>
+        <jedis.version>2.9.0</jedis.version>
+    </properties>
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-        <!--<dependency>-->
-        <!--<groupId>org.testng</groupId>-->
-        <!--<artifactId>testng</artifactId>-->
-        <!--<version>6.14.3</version>-->
-        <!--<scope>test</scope>-->
-        <!--</dependency>-->
-
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <!--<dependency>-->
-        <!--<groupId>org.seleniumhq.selenium</groupId>-->
-        <!--<artifactId>selenium-java</artifactId>-->
-        <!--<version>3.14.0</version>-->
-        <!--</dependency>-->
-
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+        <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-chrome-driver</artifactId>
-            <version>3.14.0</version>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+        <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-firefox-driver</artifactId>
-            <version>3.14.0</version>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>${jsch.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-ie-driver</artifactId>
-            <version>3.14.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.11.1</version>
+            <version>${log4j-api.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.11.1</version>
+            <version>${log4j-core.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-support</artifactId>
-            <version>3.14.0</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.4</version>
+            <version>${commons-io.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.14.3</version>
+            <version>${testng.version}</version>
             <scope>compile</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
         <dependency>
             <groupId>com.relevantcodes</groupId>
             <artifactId>extentreports</artifactId>
-            <version>2.41.2</version>
+            <version>${com.relevantcodes.version}</version>
+            <scope>provided</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
-            <version>2.3.28</version>
+            <version>${org.freemarker.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
-            <version>1.11.3</version>
+            <version>${org.jsoup.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
-            <version>3.23.1</version>
+            <version>${org.xerial.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <!--需要同时导入一下两个包以处理Execl数据-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>3.17</version>
+            <version>${org.apache.poi.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>3.17</version>
+            <version>${org.poi-ooxml.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
-            <version>3.14.0</version>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>net.sourceforge.htmlunit</groupId>
             <artifactId>htmlunit</artifactId>
-            <version>2.32</version>
+            <version>${htmlunit.version}</version>
         </dependency>
 
 
@@ -158,6 +136,14 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>./src/main/learningjavatest.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
                 </configuration>
             </plugin>
         </plugins>

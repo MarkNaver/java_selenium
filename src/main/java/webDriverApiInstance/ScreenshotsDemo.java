@@ -15,10 +15,17 @@ public class ScreenshotsDemo {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss:SSS");
         String formatStr = format.format(new Date());
         fileName = fileName + formatStr + ".png";
-        String directory = "/Users/tcw/seleniumjava/logs/";
+        String imgPath = System.getProperty("user.dir");
+        String directory = imgPath + "/logs/";
         File sourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(sourceFile,new File(directory + fileName));
-        String destination = directory + fileName;
-        return destination;
+        return directory + fileName;
     }
+
+    public static void main(String[] args) {
+        String path = System.getProperty("user.dir");
+        System.out.println(path + "/logs/");
+    }
+
+
 }

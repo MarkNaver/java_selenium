@@ -36,7 +36,7 @@ public class InvoiceAddedFactoryBase {
     /**
      * 鼠标悬停到发票管理Tab
      */
-    void setInvoiceManagement() {
+    public void setInvoiceManagement() {
         Actions action = new Actions(driver);
 
         action.moveToElement(invoiceManagement).perform();
@@ -48,7 +48,7 @@ public class InvoiceAddedFactoryBase {
     /**
      * 点击悬停后的第一个按钮
      */
-    void setGetInvoiceManagement() {
+    public void setGetInvoiceManagement() {
         Actions action = new Actions(driver);
 
         action.moveToElement(getInvoiceManagement).click().perform();
@@ -59,7 +59,7 @@ public class InvoiceAddedFactoryBase {
      * @param customerName
      * @throws InterruptedException
      */
-    void setSearchCustomerName(String customerName) throws InterruptedException {
+    public void setSearchCustomerName(String customerName) throws InterruptedException {
         searchCustomerName.sendKeys(customerName);
         Thread.sleep(800);
         log.info("输入客户名称");
@@ -68,7 +68,7 @@ public class InvoiceAddedFactoryBase {
     /**
      * 从下拉中选择客户
      */
-    void setUimenuitem1() {
+    public void setUimenuitem1() {
         uimenuitem.click();
     }
 
@@ -78,7 +78,7 @@ public class InvoiceAddedFactoryBase {
      *
      * @throws InterruptedException
      */
-    void setSearchButton() throws InterruptedException {
+    public void setSearchButton() throws InterruptedException {
         searchButton.click();
         Thread.sleep(800);
     }
@@ -89,7 +89,7 @@ public class InvoiceAddedFactoryBase {
     /**
      * 选择第一个乙方公司
      */
-    void setSecondParty() {
+    public void setSecondParty() {
         Select select = new Select(secondParty);
         select.selectByIndex(1);
         log.info("选择了乙方公司");
@@ -105,7 +105,7 @@ public class InvoiceAddedFactoryBase {
      * 给出需要开发票的合同编号
      * @param contractNo1
      */
-    void setContractNo(String contractNo1) {
+    public void setContractNo(String contractNo1) {
         contractNo.sendKeys(contractNo1);
     }
 
@@ -115,7 +115,7 @@ public class InvoiceAddedFactoryBase {
     /**
      * 点击复选框
      */
-    void setCheckbox() {
+    public void setCheckbox() {
         checkbox.click();
     }
 
@@ -125,7 +125,7 @@ public class InvoiceAddedFactoryBase {
     /**
      * 点击开票按钮
      */
-    void setChickInvoice() {
+    public void setChickInvoice() {
         ToolTables_invoiceTable_0.click();
     }
 
@@ -135,7 +135,7 @@ public class InvoiceAddedFactoryBase {
     /**
      * 点击本次开票明细
      */
-    void setBillingDetails() {
+    public void setBillingDetails() {
         BillingDetails.click();
     }
 
@@ -146,7 +146,7 @@ public class InvoiceAddedFactoryBase {
      * 输入开票金额
      * @param totalContract
      */
-    void setInvoiceAmount(String totalContract) {
+    public void setInvoiceAmount(String totalContract) {
         InvoiceAmount.clear();
         InvoiceAmount.sendKeys(totalContract);
     }
@@ -158,7 +158,7 @@ public class InvoiceAddedFactoryBase {
      * 输入服务期开始日期
      * @param serverStartDate
      */
-    void setStartMonth(String serverStartDate) {
+    public void setStartMonth(String serverStartDate) {
         startMonth.clear();
         startMonth.click();
         startMonth.sendKeys(serverStartDate);
@@ -171,7 +171,7 @@ public class InvoiceAddedFactoryBase {
      * 输入服务期结束日
      * @param serverEndDate
      */
-    void setEndMonth(String serverEndDate) {
+    public void setEndMonth(String serverEndDate) {
         endMonth.sendKeys(serverEndDate);
     }
 
@@ -181,7 +181,7 @@ public class InvoiceAddedFactoryBase {
     /**
      * 发票类型选择为普通发票
      */
-    void setInvoiceType() throws InterruptedException {
+    public void setInvoiceType() throws InterruptedException {
         Select select = new Select(invoiceType);
         select.selectByIndex(2);
         Thread.sleep(1000);
@@ -193,7 +193,7 @@ public class InvoiceAddedFactoryBase {
     /**
      * 点击提交按钮
      */
-    void setInvoiceDiv() {
+    public void setInvoiceDiv() {
         invoiceDiv.click();
     }
 
@@ -201,13 +201,13 @@ public class InvoiceAddedFactoryBase {
     /**
      * 选择data文件合同号
      */
-     String getcontractNo() {
+    public String getcontractNo() {
         String[] fileArr =  FileChaseFW.readEndData("./src/main/java/com/datacenter/data.txt").split(",");
         System.out.println(fileArr[0]);
         return fileArr[0];
     }
 
-    String getcontractAmount() {
+    public String getcontractAmount() {
         String[] fileArr =  FileChaseFW.readEndData("./src/main/java/com/datacenter/data.txt").split(",");
         System.out.println(fileArr[0]);
         return fileArr[1];
