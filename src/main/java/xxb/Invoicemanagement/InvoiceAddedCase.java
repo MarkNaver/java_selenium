@@ -9,16 +9,14 @@ import com.relevantcodes.extentreports.LogStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-//import pageclasses.ExtentFactory;
 import pageclasses.ExtentFactory;
 import webDriverApiInstance.ScreenshotsDemo;
-//import webdriverapiInstance.ScreenshotsDemo;
+
 
 public class InvoiceAddedCase extends TestSuiteBaseDemo {
     public static final Logger log = LogManager.getLogger(InvoiceAddedCase.class.getName());
@@ -76,7 +74,7 @@ public class InvoiceAddedCase extends TestSuiteBaseDemo {
             String path = ScreenshotsDemo.takeScreenshots(driver, result.getName());
             String imagePath = test.addScreenCapture(path);
             test.log(LogStatus.FAIL, "执行失败了", imagePath);
-//            test.log(LogStatus.FATAL,result.getThrowable());
+//            test.log(LogStatus.FATAL,result.getThrowable()); //详细的错误信息
 
 
         }
