@@ -2,7 +2,7 @@ package Listeners;
 
 import ExtenNews.ExtentManager;
 import ExtenNews.ExtentTestManager;
-import com.learning.TestSuiteBaseDemo;
+import com.learning.BrowserEngine;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -36,7 +36,7 @@ public class TestListener extends BaseTest implements ITestListener {
 
         //Get driver from BaseTest and assign to local webdriver variable.
         Object testClass = iTestResult.getInstance();
-        WebDriver webDriver = ((TestSuiteBaseDemo) testClass).getDriver();
+        WebDriver webDriver = ((BrowserEngine) testClass).getDriver();
 
         //Take base64Screenshot screenshot.
         String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)webDriver).

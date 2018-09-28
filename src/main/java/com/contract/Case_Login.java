@@ -1,7 +1,7 @@
 package com.contract;
 
 import com.config.selenium.Browser;
-//import com.config.selenium.LoggerDemoOne;
+//import com.Config.selenium.LoggerDemoOne;
 import com.config.selenium.LogType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +17,7 @@ public class Case_Login {
     public String password;
     public WebDriver driver;
 
-    public void prepare(){
+    private void prepare(){
         //打开浏览器
         Browser browser=new Browser();
             try {
@@ -30,12 +30,12 @@ public class Case_Login {
 
     }
 
-    public void getUsernameAndPassword(){
+    private void getUsernameAndPassword(){
         //读取用户名密码
         Properties p = new Properties();
-        InputStream ips = null;
+        InputStream ips;
         try {
-            ips = new FileInputStream("./src/main/java/com/config/selenium/config.properties");
+            ips = new FileInputStream("./src/main/java/com/Config/selenium/Config.properties");
             p.load(ips);
 
             username=p.getProperty("username");
