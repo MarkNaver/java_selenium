@@ -7,7 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SeleniumTestFramework extends TestSuiteBaseDemo {
+public class SeleniumTestFramework extends BrowserEngine {
     protected SearchPageFactoryDemoT search;
     //高级测试报告
     private ExtentReports reports;

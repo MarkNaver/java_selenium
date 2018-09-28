@@ -22,7 +22,7 @@ public class Browser {
 
         Properties p = new Properties();
         // 加载配置文件
-        InputStream ips = new FileInputStream("./src/main/java/com/config/selenium/config.properties");
+        InputStream ips = new FileInputStream("./src/main/java/com/Config/selenium/Config.properties");
         p.load(ips);
 
         browserName=p.getProperty("browserName");

@@ -1,0 +1,36 @@
+package testsuite;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class TestNG_TestCase {
+	private WebDriver driver;
+	private String baseUrl;
+	private static final Logger log = LogManager.getLogger(TestNG_TestCase.class.getName());
+	
+	@BeforeClass
+	public void beforeClass() {
+		driver = new ChromeDriver();
+		baseUrl = "https://www.baidu.com";
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		log.info("浏览器最大化");
+	}
+
+	@Test
+	public void testMethod() throws Exception {
+		driver.get(baseUrl);
+		log.info("打开了应用程序");
+	}
+	
+	@AfterClass
+	public void afterClass() {
+		driver.close();
+	}
+}

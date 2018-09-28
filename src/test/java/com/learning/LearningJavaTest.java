@@ -1,4 +1,4 @@
-//package com.learning;//import com.config.selenium.LoggerDemoOne;
+//package com.learning;//import com.Config.selenium.LoggerDemoOne;
 //
 //import com.relevantcodes.extentreports.ExtentReports;
 //import com.relevantcodes.extentreports.ExtentTest;

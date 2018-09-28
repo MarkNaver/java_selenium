@@ -1,5 +1,8 @@
 package pomtestcase;
 
+import Tools.DriverPath;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -12,13 +15,27 @@ import java.util.concurrent.TimeUnit;
 public class PageObjectModel {
     private WebDriver driver;
     private String baseUrl;
+    private String path;
+    private static final Logger log = LogManager.getLogger(PageObjectModel.class.getName());
+
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
 
     @BeforeClass
     public void setUp() {
+//        WebDriver driver;
+        path = DriverPath.getPath() + "/chromedriver";
+        System.setProperty("webdriver.chrome.driver", path);
         driver = new ChromeDriver();
+//        log.info("选择了MAC_Chrome浏览器。。。");
         baseUrl = "https://www.expedia-cn.com";
         driver.manage().window().maximize();
+        log.info("123123");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        log.info("设置了等待时间");
     }
 
     @Test

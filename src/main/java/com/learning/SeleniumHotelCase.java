@@ -14,7 +14,7 @@
 //import org.testng.annotations.Test;
 //import webDriverApiInstance.ScreenshotsDemo;
 //
-//public class SeleniumHotelCase extends TestSuiteBaseDemo {
+//public class SeleniumHotelCase extends BrowserEngine {
 //    private HotelsFactoryDemo hotelsFactoryDemo;
 //
 //    //高级测试报告

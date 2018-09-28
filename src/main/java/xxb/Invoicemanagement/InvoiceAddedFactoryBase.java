@@ -21,6 +21,37 @@ public class InvoiceAddedFactoryBase {
     private static final Logger log = LogManager.getLogger(InvoiceAddedFactoryBase.class.getName());
     private WebDriver driver;
 
+    @FindBy(id = "uid")
+    private WebElement uid;
+
+    public void setUid(String username) {
+        uid.sendKeys(username);
+        log.info("输入用户名: "+ username);
+    }
+
+    @FindBy(id = "pwd")
+    private WebElement pwd;
+
+    public void setPwd(String password) {
+        pwd.sendKeys(password);
+        log.info("输入密码: " + password);
+    }
+
+    @FindBy(xpath = "//input[@value='登录']")
+    private WebElement loginBtn;
+
+    public void setLoginBtn() {
+        loginBtn.click();
+        log.info("点击了登录按钮");
+    }
+
+    public void clickBtn(String username,String password) {
+        setUid(username);
+        setPwd(password);
+        setLoginBtn();
+    }
+
+
 
     @FindBy(linkText = "发票管理")
     private WebElement invoiceManagement;
@@ -365,5 +396,8 @@ public class InvoiceAddedFactoryBase {
 ////        clickClose();
 //        setSearchButton();
 //    }
+
+
+
 }
 

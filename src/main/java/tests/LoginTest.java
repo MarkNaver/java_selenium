@@ -1,15 +1,16 @@
 package tests;
 
 import ExtenNews.ExtentTestManager;
-import com.learning.TestSuiteBaseDemo;
+import com.learning.BrowserEngine;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import xxb.Invoicemanagement.InvoiceAddedFactoryBase;
 
-public class LoginTest extends TestSuiteBaseDemo {
+public class LoginTest extends BrowserEngine {
     public static final Logger log = LogManager.getLogger(LoginTest.class.getName());
     private InvoiceAddedFactoryBase search;
 
@@ -20,9 +21,11 @@ public class LoginTest extends TestSuiteBaseDemo {
 
     }
 
+    @Parameters({"username", "password"})
     @Test(description = "哈哈哈")
-    public void invalidLoginTest_InvalidUserNameInvalidPassword1() throws InterruptedException {
+    public void invalidLoginTest_InvalidUserNameInvalidPassword1(String username,String password) throws InterruptedException {
         ExtentTestManager.getTest().setDescription("这是用例的描述信息");
+        search.clickBtn(username, password);
         search.setInvoiceManagement();
 //        test.log()
         search.setGetInvoiceManagement();

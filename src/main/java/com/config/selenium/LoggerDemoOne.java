@@ -1,4 +1,4 @@
-//package com.config.selenium;
+//package com.Config.selenium;
 //
 //import java.io.File;
 //import java.io.FileOutputStream;

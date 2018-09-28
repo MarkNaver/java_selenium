@@ -1,7 +1,7 @@
 //package webdriverapiInstance;
 //
-//import com.config.selenium.LOGGER;
-//import com.config.selenium.LogType;
+//import com.Config.selenium.LOGGER;
+//import com.Config.selenium.LogType;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.WebElement;

@@ -21,5 +21,9 @@ public class DriverPath {
             extent = new ExtentReports(workingDir + "/logs/ExtenResult.html", true);
 
      */
+//    public static void main(String[] args) {
+//        DriverPath driverPath = new DriverPath();
+//        driverPath
+//    }
 
 }

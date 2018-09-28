@@ -5,6 +5,8 @@
     <test name="Chrome Test" enabled="true">
         <parameter name="browser" value="Chrome"/>
         <parameter name="url" value="http://172.20.0.162:8080/"/>
+        <parameter name="username" value="adminceshi"/>
+        <parameter name="password" value="123abc,.;"/>
         <classes>
             <!--<class name="xxb.contract.AddContractCase"/>-->
             <!--<class name="xxb.contract.ReviewContractCase"/>-->

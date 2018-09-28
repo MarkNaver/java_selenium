@@ -4,7 +4,7 @@
 //import java.util.concurrent.TimeUnit;
 //
 //import webDriverApiInstance.ScreenshotsDemo;
-//import com.config.selenium.Config;
+//import com.Config.selenium.Config;
 //import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 //import org.testng.Assert;

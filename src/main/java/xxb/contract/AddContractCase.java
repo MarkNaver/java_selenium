@@ -2,7 +2,7 @@
 //
 //import com.aventstack.extentreports.ExtentReports;
 //import com.aventstack.extentreports.ExtentTest;
-//import com.learning.TestSuiteBaseDemo;
+//import com.learning.BrowserEngine;
 //import org.apache.logging.log4j.LogManager;
 //import org.apache.logging.log4j.Logger;
 //import org.openqa.selenium.support.PageFactory;
@@ -20,7 +20,7 @@
 //import webDriverApiInstance.ScreenshotsDemo;
 //
 //
-//public class AddContractCase extends TestSuiteBaseDemo {
+//public class AddContractCase extends BrowserEngine {
 //    public static final Logger log = LogManager.getLogger(AddContractCase.class.getName());
 //    private AddContractFactoryBase search;
 //    //高级测试报告

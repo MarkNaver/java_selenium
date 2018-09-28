@@ -9,5 +9,6 @@ public class LoggerDemo {
     public static void main(String[] args) {
         log.debug("Debug message logged");
         log.error("Error message logged");
+        log.info("fsfsdf");
     }
 }

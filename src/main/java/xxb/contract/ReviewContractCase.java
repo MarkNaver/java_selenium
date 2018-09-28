@@ -1,22 +1,18 @@
 package xxb.contract;
 
-import com.learning.TestSuiteBaseDemo;
+import com.learning.BrowserEngine;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import webDriverApiInstance.ScreenshotsDemo;
 
 import java.util.Map;
 
-public class ReviewContractCase extends TestSuiteBaseDemo {
+public class ReviewContractCase extends BrowserEngine {
     public static final Logger log = LogManager.getLogger(ReviewContractCase.class.getName());
     private ReviewContractFactoryBase search;
     //高级测试报告

@@ -1,6 +1,6 @@
 //package xxb.contract;
 //
-//import com.learning.TestSuiteBaseDemo;
+//import com.learning.BrowserEngine;
 //import com.relevantcodes.extentreports.ExtentReports;
 //import com.relevantcodes.extentreports.ExtentTest;
 //import com.relevantcodes.extentreports.LogStatus;
@@ -18,7 +18,7 @@
 //
 //import java.util.Map;
 //
-//public class AddCustomerCase extends TestSuiteBaseDemo {
+//public class AddCustomerCase extends BrowserEngine {
 //    public static final Logger log = LogManager.getLogger(AddCustomerCase.class.getName());
 //    private ContractCustomerFactoryBase search;
 //

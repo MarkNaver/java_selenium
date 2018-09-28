@@ -1,4 +1,4 @@
-//package com.config.selenium;
+//package com.Config.selenium;
 //
 //import com.relevantcodes.extentreports.ExtentReports;
 //import com.relevantcodes.extentreports.ExtentTest;

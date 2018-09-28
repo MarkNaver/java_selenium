@@ -2,7 +2,7 @@ package xxb.Invoicemanagement;
 
 
 import com.datacenter.GetData;
-import com.learning.TestSuiteBaseDemo;
+import com.learning.BrowserEngine;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -18,7 +18,7 @@ import pageclasses.ExtentFactory;
 import webDriverApiInstance.ScreenshotsDemo;
 
 
-public class InvoiceAddedCase extends TestSuiteBaseDemo {
+public class InvoiceAddedCase extends BrowserEngine {
     public static final Logger log = LogManager.getLogger(InvoiceAddedCase.class.getName());
     private InvoiceAddedFactoryBase search;
     //高级测试报告
