@@ -24,8 +24,16 @@
         <jsch.version>0.1.54</jsch.version>
         <jedis.version>2.9.0</jedis.version>
         <fastjson.version>1.2.49</fastjson.version>
+        <extentreports3.version>3.1.5</extentreports3.version>
     </properties>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extentreports3.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -148,6 +156,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
                 <configuration>
                     <source>6</source>
                     <target>6</target>
