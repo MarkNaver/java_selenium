@@ -1,6 +1,6 @@
 package Listeners;
 
-import ExtenNews.ExtentTestManager;
+import ExtentReportsVersion2.ExtentTestManager;
 import com.common.BrowserEngine;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.OutputType;

@@ -1,6 +1,6 @@
 package tests;
 
-import ExtenNews.ExtentTestManager;
+import ExtentReportsVersion2.ExtentTestManager;
 import com.common.BrowserEngine;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
