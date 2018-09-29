@@ -5,6 +5,8 @@
     <test name="Chrome Test" enabled="true">
         <parameter name="browser" value="Chrome"/>
         <parameter name="url" value="http://172.20.0.162:8080/"/>
+        <parameter name="username" value="adminceshi"/>
+        <parameter name="password" value="123abc,.;"/>
         <classes>
             <!--<class name="xxb.contract.AddContractCase"/>-->
             <!--<class name="xxb.contract.ReviewContractCase"/>-->
@@ -30,9 +32,11 @@
 
         </classes>
     </test>
-    <!--<listeners>-->
-        <!--&lt;!&ndash; extent reports 监听类路径 &ndash;&gt;-->
-        <!--<listener class-name="ExtenNews.ExtentManger"/>-->
-    <!--</listeners>-->
+    <listeners>
+        <!-- extent reports 监听类路径 -->
+        <listener class-name="Listeners.TestListener"/>
+        <listener class-name="Listeners.AnnotationTransformer"/>
+
+    </listeners>
 
 </suite>
