@@ -1,7 +1,7 @@
 package tests;
 
 import ExtenNews.ExtentTestManager;
-import com.learning.BrowserEngine;
+import com.common.BrowserEngine;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
@@ -32,7 +32,7 @@ public class LoginTest extends BrowserEngine {
         search.setSearchCustomerName("奥巴马123");
         search.setUimenuitem1();
         search.setSecondParty();
-        search.setContractNo(search.getcontractNo());
+//        search.setContractNo(search.getcontractNo());
 //        search.setSearchButton();
 //        search.setCheckbox();
 //        search.setChickInvoice();

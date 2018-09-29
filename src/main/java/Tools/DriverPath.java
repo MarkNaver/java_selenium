@@ -13,6 +13,7 @@ public class DriverPath {
                 File.separator + "main" +
                 File.separator + "java" +
                 File.separator + "Tools");
+        System.out.println(file);
         return String.valueOf(file);
     }
 
@@ -21,9 +22,13 @@ public class DriverPath {
             extent = new ExtentReports(workingDir + "/logs/ExtenResult.html", true);
 
      */
-//    public static void main(String[] args) {
-//        DriverPath driverPath = new DriverPath();
-//        driverPath
-//    }
+    public static void main(String[] args) {
+        File file = new File(System.getProperty("user.dir") +
+                File.separator + "src" +
+                File.separator + "main" +
+                File.separator + "java" +
+                File.separator + "Tools");
+        System.out.println(file);
+    }
 
 }

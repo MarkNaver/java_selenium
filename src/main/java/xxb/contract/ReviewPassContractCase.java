@@ -2,7 +2,7 @@ package xxb.contract;
 
 
 import com.config.selenium.FileChaseFW;
-import com.learning.BrowserEngine;
+import com.common.BrowserEngine;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.apache.logging.log4j.LogManager;
@@ -55,7 +55,7 @@ public class ReviewPassContractCase extends BrowserEngine {
 
         search.setReviewButtonPass();
 
-        FileChaseFW.fileChase("./src/main/java/com/datacenter/data.txt", search.No(),search.setContractPrice());
+//        FileChaseFW.fileChase("./src/main/java/com/datacenter/data.txt", search.No(),search.setContractPrice());
         boolean result = search.isReviewSuccessfully();
         Assert.assertTrue(result);
         search.setoKAndReturnButton();

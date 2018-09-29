@@ -229,20 +229,20 @@ public class InvoiceAddedFactoryBase {
     }
 
 
-    /**
-     * 选择data文件合同号
-     */
-    public String getcontractNo() {
-        String[] fileArr =  FileChaseFW.readEndData("./src/main/java/com/datacenter/data.txt").split(",");
-        System.out.println(fileArr[0]);
-        return fileArr[0];
-    }
-
-    public String getcontractAmount() {
-        String[] fileArr =  FileChaseFW.readEndData("./src/main/java/com/datacenter/data.txt").split(",");
-        System.out.println(fileArr[0]);
-        return fileArr[1];
-    }
+//    /**
+//     * 选择data文件合同号
+//     */
+//    public String getcontractNo() {
+//        String[] fileArr =  FileChaseFW.readEndData("./src/main/java/com/datacenter/data.txt").split(",");
+//        System.out.println(fileArr[0]);
+//        return fileArr[0];
+//    }
+//
+//    public String getcontractAmount() {
+//        String[] fileArr =  FileChaseFW.readEndData("./src/main/java/com/datacenter/data.txt").split(",");
+//        System.out.println(fileArr[0]);
+//        return fileArr[1];
+//    }
 
 
 //    /**

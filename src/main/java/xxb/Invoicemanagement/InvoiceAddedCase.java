@@ -1,8 +1,8 @@
 package xxb.Invoicemanagement;
 
 
-import com.datacenter.GetData;
-import com.learning.BrowserEngine;
+//import com.datacenter.GetData;
+import com.common.BrowserEngine;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -10,10 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pageclasses.ExtentFactory;
 import webDriverApiInstance.ScreenshotsDemo;
 
@@ -39,22 +36,23 @@ public class InvoiceAddedCase extends BrowserEngine {
         test = reports.startTest("InvoiceAddedCase -> 发票添加");
 
     }
-
-    @Test
-    public void testInvoiceAddedCase() throws InterruptedException {
+    @Parameters({"username", "password"})
+    @Test(description = "测试合同系统")
+    public void testInvoiceAddedCase(String username,String password) throws InterruptedException {
+        search.clickBtn(username,password);
         search.setInvoiceManagement();
         search.setGetInvoiceManagement();
         search.setSearchCustomerName("奥巴马123");
         search.setUimenuitem1();
         search.setSecondParty();
-        search.setContractNo(search.getcontractNo());
+//        search.setContractNo(search.getcontractNo());
         search.setSearchButton();
         search.setCheckbox();
         search.setChickInvoice();
         search.setBillingDetails();
-        search.setInvoiceAmount(search.getcontractAmount());
-        search.setStartMonth(GetData.serverData());
-        search.setEndMonth(GetData.serverData());
+//        search.setInvoiceAmount(search.getcontractAmount());
+//        search.setStartMonth(GetData.serverData());
+//        search.setEndMonth(GetData.serverData());
 //        Thread.sleep(100000);
         search.setInvoiceType();
         Thread.sleep(30000);

@@ -1,6 +1,6 @@
 package xxb.contract;
 
-import com.learning.BrowserEngine;
+import com.common.BrowserEngine;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.apache.logging.log4j.LogManager;
