@@ -167,12 +167,12 @@ public class Config {
     public static void main(String[] args) throws IOException {
         Config config = new Config();
 //        config.getToken();
-//        System.out.println(config.getToken());
+        System.out.println(config.getToken());
 //        System.out.println(config.projectPath("config.properties"));
 //        config.getArrayList();
 //        System.out.println(config.redExcel("LoginTests",2,2));
 //        System.out.println(config.readEndData("data.txt"));
-        config.fileChase("da.txt","one","two");
+//        config.fileChase("da.txt","one","two");
     }
 
 }

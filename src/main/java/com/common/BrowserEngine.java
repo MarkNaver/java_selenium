@@ -94,6 +94,12 @@ public class BrowserEngine {
 
     @AfterClass
     public void afterClass() {
+        System.out.println("关闭了浏览器");
         driver.quit();
     }
+
+//    public void stopDriver() {
+//        System.out.println("关闭浏览器");
+//        driver.quit();
+//    }
 }
