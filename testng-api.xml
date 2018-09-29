@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--多浏览器、多线程并行测试-->
+<suite name="API Test Suite">
+    <test name="API Test" enabled="true">
+        <!--<parameter name="browser" value="Chrome"/>-->
+        <parameter name="ApiURL" value="http://api2.capitalonline.net/gic/v1/get_token/"/>
+        <parameter name="ApiList" value="http://api2.capitalonline.net/gic/v1/app/list/"/>
+        <parameter name="username" value="tcwaily@me.com"/>
+        <parameter name="password" value="test123"/>
+        <classes>
+            <class name="tests.ApiTest"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <!-- extent reports 监听类路径 -->
+        <listener class-name="ExtentReportsVersion3.TestListener"/>
+        <!--<listener class-name="Listeners.AnnotationTransformer"/>-->
+
+    </listeners>
+
+</suite>
