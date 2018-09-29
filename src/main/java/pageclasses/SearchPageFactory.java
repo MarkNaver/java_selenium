@@ -119,20 +119,20 @@ public class SearchPageFactory {
     }
 
     //判断是否找到了titleBar元素来判断case是否成功
-    public boolean isTitleBarPresent() {
-        WebElement titleBar = null;
-        try {
-            titleBar = driver.findElement(By.id("titleBar"));
-            if (titleBar != null) {
-                return true;
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-        return false;
-    }
-
+//    public boolean isTitleBarPresent() {
+//        WebElement titleBar = null;
+//        try {
+//            titleBar = driver.findElement(By.id("titleBar"));
+//            if (titleBar != null) {
+//                return true;
+//            }
+//        } catch (NoSuchElementException e) {
+//            System.out.println(e.getMessage());
+//            return false;
+//        }
+//        return false;
+//    }
+//
     //步骤集合
     public void searchPage(String flightOrigin, String flightDestination, String flightDeparting) {
         clicTabfightTab();

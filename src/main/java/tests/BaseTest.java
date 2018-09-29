@@ -16,13 +16,14 @@ public class BaseTest {
 
     @BeforeClass
     public void setup() {
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 15);
-        driver.manage().window().maximize();
+//        driver = new ChromeDriver();
+//        wait = new WebDriverWait(driver, 15);
+//        driver.manage().window().maximize();
+        System.out.println(123123);
     }
 
     @AfterClass
     public void teardown() {
-        driver.quit();
+        System.out.println(123123);
     }
 }
