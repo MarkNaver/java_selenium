@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--多浏览器、多线程并行测试-->
+<!--maven自动测试必须xml文件，不要删，可在pom.xml中定义其他xml文件-->
+<suite name="All Test Suite">
+    <test name="Chrome Test">
+        <!--<parameter name="browser" value="Chrome"/>-->
+        <classes>
+            <class name="com.learning.LearningJavaTest"/>
+            <!--<class name="testsuite.FrameworkTestCase3"/>-->
+
+        </classes>
+    </test>
+
+</suite>
