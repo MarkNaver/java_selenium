@@ -40,7 +40,7 @@ public class Config {
      * @return
      * @throws IOException
      */
-    private ArrayList<String> userConfig() throws IOException {
+    private static ArrayList<String> userConfig() throws IOException {
         Properties properties = new Properties();
         InputStream inputStream = new FileInputStream(configFilePath("config.properties"));
         properties.load(inputStream);
@@ -67,7 +67,7 @@ public class Config {
      * @return
      * @throws IOException
      */
-    private String getToken() throws IOException {
+    public static String getToken() throws IOException {
 
         ArrayList<String> arrayList;
         arrayList = userConfig();
@@ -94,7 +94,7 @@ public class Config {
      * 获取当前时间
      * @return
      */
-    public String  getCurrentTime() {
+    public static String  getCurrentTime() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd|HH:mm:ss:SSS");
         //        System.out.print(formatStr);
         return format.format(new Date());
@@ -107,7 +107,7 @@ public class Config {
      * @param cellNum
      * @return
      */
-    public String  redExcel(String sheetName,int rowNum,int cellNum) {
+    public static String  redExcel(String sheetName,int rowNum,int cellNum) {
         XSSFWorkbook xssfWorkbook;
         XSSFSheet xssfSheet;
         XSSFCell xssfCell;
@@ -143,7 +143,7 @@ public class Config {
      *
      * @param
      */
-    public String readEndData(String txtFileName) {
+    public static String readEndData(String txtFileName) {
         String str2 = null;
         try {
 //            String str2 = null;
@@ -165,9 +165,9 @@ public class Config {
     }
 
     public static void main(String[] args) throws IOException {
-        Config config = new Config();
+//        Config config = new Config();
 //        config.getToken();
-        System.out.println(config.getToken());
+        System.out.println(getToken());
 //        System.out.println(config.projectPath("config.properties"));
 //        config.getArrayList();
 //        System.out.println(config.redExcel("LoginTests",2,2));

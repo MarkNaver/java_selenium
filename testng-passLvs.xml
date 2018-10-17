@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--多浏览器、多线程并行测试-->
+<suite name="All Test Suite">
+    <test name="Chrome Test" enabled="true">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="url" value="http://172.20.0.162:8080/"/>
+        <parameter name="username" value="adminceshi"/>
+        <parameter name="password" value="123abc,.;"/>
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <listeners>
+    <!-- extent reports 监听类路径 -->
+    <listener class-name="Listeners.TestListener"/>
+    <listener class-name="Listeners.AnnotationTransformer"/>
+
+    </listeners>
+
+</suite>

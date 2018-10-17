@@ -22,14 +22,14 @@ public class JschRedis {
     public static void main(String[] args) throws JSchException {
 
 
-        String host = "139.159.3.154"; //虚拟机ip
+        String host = "58.215.140.66"; //虚拟机ip
         String user = "root";//虚拟机用户名
-        String password = "test123T";//虚拟机密码
+        String password = "TEST123t";//虚拟机密码
         int port = 22; //ssh端口
 
         //redis服务器地址及端口
-        String tunnelRemoteHost = "10.240.18.7";
-        int tunnelRemotePort = 35618;
+        String tunnelRemoteHost = "10.240.24.6";
+        int tunnelRemotePort = 31759;
 
         JSch jSch = new JSch();
         Session session = jSch.getSession(user, host, port);
@@ -41,10 +41,10 @@ public class JschRedis {
         session.connect(); //连接
 
 
-        port = session.setPortForwardingL(0, tunnelRemoteHost, tunnelRemotePort);
-        Jedis jedis = new Jedis("127.0.0.1", port);
-        jedis.auth("OIHsi2hmunOCWQSz");
-        int count = 100;
+        int port1 = session.setPortForwardingL(0, tunnelRemoteHost, tunnelRemotePort);
+        Jedis jedis = new Jedis("127.0.0.1", port1);
+        jedis.auth("OkWKHV8eXMdZNov2");
+        int count = 1003;
         for (int i = 0; i < count; i++) {
             //随机字符串写入key和value
             jedis.set(getRandomString(10), getRandomString(11));
