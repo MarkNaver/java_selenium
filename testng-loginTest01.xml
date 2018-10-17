@@ -8,10 +8,6 @@
         <parameter name="username" value="adminceshi"/>
         <parameter name="password" value="123abc,.;"/>
         <classes>
-            <!--<class name="xxb.contract.AddContractCase"/>-->
-            <!--<class name="xxb.contract.ReviewContractCase"/>-->
-            <!--<class name="xxb.contract.ReviewPassContractCase"/>-->
-            <class name="tests.LoginTest"/>
             <class name="tests.LoginTest"/>
         </classes>
     </test>
