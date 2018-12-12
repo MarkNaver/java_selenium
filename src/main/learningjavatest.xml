@@ -7,7 +7,7 @@
         <!--<parameter name="browser" value="Chrome"/>-->
         <classes>
             <class name="com.learning.LearningJavaTest"/>
-            <!--<class name="testsuite.FrameworkTestCase3"/>-->
+            <class name="com.learning.LearningJavaTest2"/>
 
         </classes>
     </test>
