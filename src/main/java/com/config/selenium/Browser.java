@@ -35,13 +35,13 @@ public class Browser {
 
         if(browserName.equalsIgnoreCase("Firefox")){
 
-            System.setProperty("webdriver.gecko.driver", "./Tools/geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", "driverfile/geckodriver.exe");
             driver = new FirefoxDriver();
 
 
         }else if(browserName.equalsIgnoreCase("Windows_Chrome")){
 
-            System.setProperty("webdriver.chrome.driver", "src/main/java/Tools/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/main/java/driverfile/chromedriver.exe");
             driver= new ChromeDriver();
             driver.get(serverURL);
             driver.manage().window().maximize();
@@ -50,11 +50,11 @@ public class Browser {
 
         }else if(browserName.equalsIgnoreCase("IE")){
 
-            System.setProperty("webdriver.ie.driver", "./Tools/IEDriverServer.exe");
+            System.setProperty("webdriver.ie.driver", "driverfile/IEDriverServer.exe");
             driver= new InternetExplorerDriver();
         }else if (browserName.equalsIgnoreCase("Mac_Chrome"))
 
-            System.setProperty("webdriver.chrome.driver", "./src/main/java/Tools/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "./src/main/java/driverfile/chromedriver");
             driver= new ChromeDriver();
 
         driver.get(serverURL);

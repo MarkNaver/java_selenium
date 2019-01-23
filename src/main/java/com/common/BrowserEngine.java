@@ -1,6 +1,6 @@
 package com.common;
 
-import Tools.DriverPath;
+import driverfile.DriverPath;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;

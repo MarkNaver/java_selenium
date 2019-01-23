@@ -31,7 +31,7 @@ class LearningJavaTest2 {
 
     @BeforeClass
     public void beforeClass() throws MalformedURLException {
-//        System.setProperty("webdriver.chrome.driver","/var/jenkins_home/workspace/java+selenium3/src/main/java/Tools/chromedriver");
+//        System.setProperty("webdriver.chrome.driver","/var/jenkins_home/workspace/java+selenium3/src/main/java/driverfile/chromedriver");
 //        driver = new ChromeDriver();
 
         //高级测试报告

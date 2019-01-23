@@ -1,6 +1,6 @@
 package NewPaas;
 
-import Tools.DriverPath;
+import driverfile.DriverPath;
 import com.common.Config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
