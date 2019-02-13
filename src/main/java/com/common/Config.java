@@ -52,6 +52,15 @@ public class Config {
         return arrayList;
     }
 
+    public static ArrayList<String> randomStr() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd|HH:mm:ss:SSS");
+        SimpleDateFormat format4 = new SimpleDateFormat("MM-dd-HH-mm");
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add(format.format(new Date()));
+        arrayList.add(format4.format(new Date()));
+        return arrayList;
+    }
+
 //    private ArrayList<String> getArrayList() throws IOException {
 //        ArrayList<String> arrayList;
 //
@@ -90,6 +99,22 @@ public class Config {
     }
 
 
+    public static String getImgCode(String value) throws IOException {
+        String apiUrl = "http://10.13.2.235:6003/return_captch_code/";
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(apiUrl + value)
+                .get()
+                .build();
+        Response response = client.newCall(request).execute();
+        assert response.body() != null;
+        String result = response.body().string();
+        Map<String,Object> map;
+        map = JSONObject.parseObject(result);
+        System.out.println((String) map.get("captch_code"));
+        return (String) map.get("captch_code");
+    }
+
     /**
      * 获取当前时间
      * @return
@@ -99,6 +124,9 @@ public class Config {
         //        System.out.print(formatStr);
         return format.format(new Date());
     }
+
+
+
 
     /**
      * 读取excel文件，需要传入表格名，行标，列标来查询具体数据
@@ -164,15 +192,24 @@ public class Config {
         //System.out.println(arr[1]);
     }
 
+    public static void sleep() throws InterruptedException {
+        Thread.sleep(3500);
+    }
+
+
+
     public static void main(String[] args) throws IOException {
-//        Config config = new Config();
-//        config.getToken();
-        System.out.println(getToken());
+//        getImgCode();
+        Config config = new Config();
+//        getToken();
+//        System.out.println(getToken());
 //        System.out.println(config.projectPath("config.properties"));
-//        config.getArrayList();
+        System.out.println(randomStr().get(1));
 //        System.out.println(config.redExcel("LoginTests",2,2));
 //        System.out.println(config.readEndData("data.txt"));
 //        config.fileChase("da.txt","one","two");
+//        System.out.println(getCurrentTime());
     }
+
 
 }

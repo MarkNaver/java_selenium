@@ -1,5 +1,6 @@
 package mysql;
 import JschConnection.JschRedis;
+import org.w3c.dom.Element;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -35,6 +36,11 @@ public class mysql_systems {
         int un = 18 + (int)(Math.random()*43);
 //        System.out.println(un);
 //        System.out.println(JschRedis.);
+    }
+
+    private static void getD(Element element) {
+        String string = element.getAttribute("value");
+        System.out.println(string);
     }
 
 

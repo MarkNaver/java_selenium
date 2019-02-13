@@ -10,7 +10,7 @@ import java.util.Properties;
 import java.util.Random;
 
 public class JschRedis {
-    static String getRandomString(int length) {
+    public static String getRandomString(int length) {
         //随机字符串的随机字符库
         String KeyString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         StringBuilder sb = new StringBuilder();

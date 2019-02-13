@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--多浏览器、多线程并行测试-->
+<suite name="All Test Suite">
+    <test name="Chrome Test" enabled="true">
+        <parameter name="browser"     value="Chrome"/>
+        <parameter name="gicUrl"      value="https://console.capitalonline.net/"/>
+        <parameter name="PaaSLoadUrl" value="https://console.capitalonline.net/loadbalances"/>
+        <parameter name="PaaSDBUrl"   value="https://console.capitalonline.net/dbinstances"/>
+        <parameter name="txtUserName" value="tcwaily@me.com"/>
+        <parameter name="txtUserPwd"  value="test123"/>
+        <classes>
+            <class name="NewPaaS.PaaSTest"/>
+        </classes>
+    </test>
+
+    <listeners>
+    <!-- extent reports 监听类路径 -->
+    <listener class-name="Listeners.TestListener"/>
+    <!--<listener class-name="Listeners.AnnotationTransformer"/>-->
+
+    </listeners>
+
+</suite>

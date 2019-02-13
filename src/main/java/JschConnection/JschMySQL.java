@@ -62,7 +62,7 @@ public class JschMySQL {
                     "`test`.`user`(`name`, `email`, `password`,`city`,`age`,`create_time`,`gender`) " +
                     "VALUES " +
                     "(?,?,?,?,?,?,?);";
-            int count = 11555;
+            int count = 333;
             PreparedStatement sql1 = connection1.prepareStatement(insertSql);
 
             System.out.println("开始插入数据");

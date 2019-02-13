@@ -48,27 +48,27 @@ public class ApiTest extends BaseTest{
         Assert.assertEquals("success",map.get("status"));
     }
 
-    /**
-     * 接口获取列表信息，token待优化
-     * @param ApiList
-     * @throws IOException
-     */
-    @Parameters({"ApiList"})
-    @Test
-    public void testApiList(String ApiList) throws IOException {
-        OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder()
-                .url(ApiList)
-                .get()
-                .addHeader("token", "b1f392c478405566515797b64aca6075c43a34ec9f0c9d08897c6ef66dea9097")
-                .build();
-        Response response = client.newCall(request).execute();
-        assert response.body() != null;
-        String result = response.body().string();
-        Map<String, Object> map;
-        map = JSONObject.parseObject(result);
-        System.out.println(map.get("code"));
-    }
+//    /**
+//     * 接口获取列表信息，token待优化
+//     * @param ApiList
+//     * @throws IOException
+//     */
+//    @Parameters({"ApiList"})
+//    @Test
+//    public void testApiList(String ApiList) throws IOException {
+//        OkHttpClient client = new OkHttpClient();
+//        Request request = new Request.Builder()
+//                .url(ApiList)
+//                .get()
+//                .addHeader("token", "b1f392c478405566515797b64aca6075c43a34ec9f0c9d08897c6ef66dea9097")
+//                .build();
+//        Response response = client.newCall(request).execute();
+//        assert response.body() != null;
+//        String result = response.body().string();
+//        Map<String, Object> map;
+//        map = JSONObject.parseObject(result);
+//        System.out.println(map.get("code"));
+//    }
 
     @AfterClass
     public void tearDown() {

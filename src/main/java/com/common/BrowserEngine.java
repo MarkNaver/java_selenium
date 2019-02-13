@@ -3,12 +3,15 @@ package com.common;
 import driverfile.DriverPath;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -20,6 +23,7 @@ public class BrowserEngine {
 
     protected WebDriver driver;
 
+
     public WebDriver getDriver() {
         return driver;
     }
@@ -27,6 +31,8 @@ public class BrowserEngine {
 
     private static WebDriver getDriverInstance(String browser, String url) {
         WebDriver driver = null;
+//        assert false;
+//        driver.manage().window().setSize(new Dimension(1928,1000));
         String osname = System.getProperty("os.name");
         String path;
         // Browsers
@@ -36,6 +42,7 @@ public class BrowserEngine {
                 path = DriverPath.getPath() + "/chromedriver";
                 System.setProperty("webdriver.chrome.driver", path);
                 driver = new ChromeDriver();
+//                driver.manage().window().setSize(new Dimension(1600,1000));
                 log.info("选择了MAC_Chrome浏览器。。。");
             } else {
                 path = DriverPath.getPath() + "/chromedriver.exe";
@@ -74,27 +81,40 @@ public class BrowserEngine {
         // Open the Application
         try {
             assert driver != null;
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().window().setSize(new Dimension(1600,1000));
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
             driver.get(url);
             log.info("打开了浏览器");
         } catch (Exception e) {
-            e.getMessage();
+            e.printStackTrace();
         }
         return driver;
     }
 
-    @Parameters({"browser", "url"})
+    /**
+     * 重写了findElement方法
+     * @param webElement
+     * @return
+     */
+    public WebElement findMyElement(WebElement webElement) {
+        return webElement;
+    }
+
+//    public WebDriverWait waitTime() {
+//        WebDriverWait
+//    }
+
+    @Parameters({"browser", "gicUrl"})
     @BeforeClass(alwaysRun = true)
-    public void setup(String browser, String url) {
-        driver = getDriverInstance(browser, url);
+    public void setup(String browser, String gicUrl) {
+        driver = getDriverInstance(browser, gicUrl);
     }
 
 
     @AfterClass
     public void afterClass() {
-        System.out.println("关闭了浏览器");
+        log.info("关闭了浏览器");
         driver.quit();
     }
 
